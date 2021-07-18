@@ -1,0 +1,208 @@
+
+
+
+<view class="id1">
+<image class='touxiang' src="{{ne.avatarUrl}}" mode="widthFix"> </image>
+<text class="title">{{ne.name}}</text>
+
+<text class="title1top">{{ne.realtime}}</text>
+
+ </view>
+
+ <view wx:if="{{ne.length==1}}">
+  <image class="lbt" src="{{ne.jpgfilearr}}"  mode="widthFix"  data-jpgid="{{ne.jpgfilearr[0]}}"  bindtap="seejpg1"></image>
+ </view>
+
+
+ <view wx:if="{{ne.length>1}}">
+  <view class='swiper'>
+    <swiper indicator-dots="{{indicatorDots}}" vertical="{{vertical}}"  duration="{{duration}}" interval='{{interval}}' bindchange="bindchange"  circular="{{circular}}" indicator-dots="true" style="height:{{imgheights[current]}}rpx;">
+    <block wx:for='{{ne.jpgfilearr}}' wx:key="{{index}}">
+      <swiper-item class="imagecontainer">
+        <image src="{{item}}" data-id='{{index}}' class="slide-image" mode="widthFix" bindload="imageLoad" data-jpgid="{{item}}"  bindtap="seejpg1"/>
+      </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+
+</view>
+
+<view class="wenzicontainer">
+  <rich-text class="wenzi" selectable  nodes="{{ne.interviwe.html}}" space="emsp" ></rich-text>
+</view>
+
+
+
+<view class="fengxiang"></view>
+
+<view class="hd">
+<van-row >
+
+  <van-col class="huifu" span="9" offset="1">回复 • {{answernumber}}条</van-col>
+
+</van-row>
+</view>
+
+
+
+
+
+<view wx:for="{{ne1}}" wx:key="key">
+<view class="id">
+<image class='touxiang' src="{{item.avatarUrl}}" mode="widthFix"> </image>
+<text class="title">{{item.name}}</text>
+ </view>
+
+ <view class="wenzianswercontainer">
+  <rich-text class="wenzianswer" selectable  nodes="{{item.answertext}}" space="emsp"></rich-text>
+</view>
+
+<view class="form-first-bottom">
+       <view wx:for="{{item.jpgfilearr}}">
+        <view class='jpgarr' >
+          <image class='images-item' src='{{item}}'  mode="aspectFill" 
+           data-jpgid="{{item}}"  bindtap="seejpg">
+          </image>
+        </view>
+      </view>
+    </view>
+
+
+
+<view class="morechoose">
+<text class="titletime">{{item.realtime}}</text>
+<van-icon class="comment" name="chat-o"  size="20" color="#9d9d9d"  bindtap="clickme1" data-commentid1="{{item._id}}"  />
+<block wx:if="{{item._openid==id}}">
+<van-icon class="more" data-id="{{item._id}}" data-jpg="{{item.jpgfilearr}}"  name="ellipsis"  bindtap="showPopupbottom"  color="#9d9d9d" size="20"/>
+</block>
+</view>
+
+
+
+<view wx:if="{{item.comment!=''}}">
+<view class="juxinghui">
+<view wx:for="{{item.comment}}" wx:key="{{index}}" class="answercontainertop">
+  <view hover-class="deletehover"  data-id="{{item._id}}" data-openid="{{item._openid}}" bindlongpress="showPopupbottom2" class="answercontainer" >
+  <text  class="answer2name">{{item.name}}：<text class="answertext">{{item.answertext}}</text>
+  </text>
+</view>
+</view>
+</view>
+</view>
+
+
+
+<van-divider class="fengge" dashed/>
+</view>
+<view class="juxingbuchong"></view>
+
+
+<view class="juxing">
+
+  <view class="answer" bindtap="clickme">
+  <view class="anwsergroug">
+    <text class="writetext">✎ 我来回答...</text>
+  </view>
+</view>
+</view>
+
+
+
+
+ 
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal1" wx:if="{{showModalStatus1}}"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" class="commodity_attr_box1" wx:if="{{showModalStatus1}}">
+   
+
+    <block wx:if="{{answertext==''}}">
+  <text class="send" style="color: #b3b1b1;"  >发布</text></block>
+
+  <block wx:if="{{answertext!=''}}">
+  <text class="send"  style="color: #4972cc;"  bindtap="update3" >发布</text></block>
+
+
+    <van-cell-group class="answerwrite" border="{{false}}">  
+  <van-field
+  bind:change="answertext"
+    type="textarea"
+    placeholder="说点什么..."
+    autosize
+    border="{{ false }}"
+    maxlength="2000"
+  />
+</van-cell-group>
+
+  </view>
+
+
+
+
+ 
+<!--屏幕背景变暗的背景  -->
+  <view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+   
+<block wx:if="{{answertext==''||jpgnumber==''}}">
+  <text class="send" style="color: #b3b1b1;"  >发布</text>
+</block>
+
+<block wx:if="{{answertext!=''||jpgnumber!=''}}">
+
+  <text class="send" style="color: #4972cc;" bindtap="update2" >发布</text>
+
+</block>
+
+    <van-cell-group class="answerwrite" border="{{false}}">  
+  <van-field
+  bind:change="answertext"
+    type="textarea"
+    placeholder="说点什么..."
+    autosize
+    border="{{ false }}"
+    maxlength="2000"
+  />
+</van-cell-group>
+
+<view class="form-first-bottom1">
+<block wx:for="{{jpgarr}}" wx:key="id">
+        <view class='jpgarr1' wx:if="{{jpgarr.length > 0}}" >
+          <image class='images-item1' src='{{item}}'  mode="aspectFill" data-index="{{index}}">
+          </image>
+          <van-icon custom-class="delete" name="clear" data-index="{{index}}" bindtap="deleteimg" />
+        </view>
+      </block>
+    </view>
+
+    <van-icon class="answerphoto" name="photo-o"   size="28" bindtap="addjpg"/>
+
+  </view>
+
+
+  <view wx:if="{{isshow=='true'}}">  
+<view class="container" catchtouchmove="preventD" >
+    <i-spin fix></i-spin>
+</view></view>
+
+
+<view wx:if="{{tipsshow=='1'}}">  
+  <i-toast id="toast" />
+</view>
+
+<van-overlay show="{{ show }}" />
+
+
+
+<van-popup show="{{ showbottom }}" custom-style="height: 20%;" position="bottom" bind:close="onClosebottom" round>
+<view class="delete1" bindtap="remove" >删除</view>
+<view class="cancel" bindtap="onClosebottom">取消</view>
+</van-popup>
+
+
+<van-popup show="{{ showbottom2 }}" custom-style="height: 20%;" position="bottom" bind:close="onClosebottom2" round>
+<view class="delete1" bindtap="remove2" >删除</view>
+<view class="cancel" bindtap="onClosebottom2">取消</view>
+</van-popup>

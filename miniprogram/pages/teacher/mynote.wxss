@@ -1,0 +1,104 @@
+
+
+.newstext{
+  position: absolute;
+  font-size: small;
+  z-index: 1;
+  left: 30vw;
+}
+
+.newsicon{
+  position: relative;
+  width: 15%;
+  height: auto;
+  left: 0vw;
+
+}
+
+.newsshuiyin{
+  width: 50%;
+  position: relative;
+  left: 30vw;
+}
+
+.news{
+  width: 100%;
+  padding: 1vw;
+  height: auto;
+  background-color: #fff;
+  border-radius: 2vw;
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+
+}
+
+
+.item-hover {
+  background: rgb(230, 230, 230);
+}
+
+
+.see{
+  position: absolute;
+  left: 0.5vw;
+  top: 18vw;
+  display: flex;
+  align-items: center;
+  font-size: smaller;
+}
+
+.seeicon{
+  margin-right: 1vw;
+}
+
+
+.delete{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  color: crimson;
+}
+
+.cancel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.nullcontainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65vw;
+}
+
+.null{
+  width: 50%;
+  height: auto;
+}
+
+
+
+.loading{
+  width: 10%;
+  position: relative;
+  
+}
+
+.loadingcontainer{
+height: 10vw;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: small;
+top: 0;
+width: 100%;
+}

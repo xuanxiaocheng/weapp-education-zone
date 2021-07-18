@@ -1,0 +1,33 @@
+<van-collapse value="{{ activeNames }}" accordion bind:change="onChange" border="{{ false }}" clickable>
+  <view wx:for="{{dest}}">
+  <van-collapse-item title-class="titlemulu" value="{{item.data.length}}" title="{{item.name}}"  name="{{item.name}}" border="{{ false }}"  >
+
+<view class="news"data-id="{{item.id}}" bindlongpress="showPopupbottom" wx:for="{{item.data}}" hover-class="item-hover">
+<image class="newsicon" src="/img/notice.png" mode="widthFix"></image>
+<rich-text nodes="{{item.content}}" class="newstext"></rich-text>
+<image class="newsshuiyin" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E9%80%9A%E5%91%8A%E6%B0%B4%E5%8D%B0.png?sign=748a11c5df488991d036d00be91719ee&t=1606992012" mode="widthFix"></image>
+
+</view>
+
+  </van-collapse-item>
+</view>
+</van-collapse>
+
+<van-popup show="{{ showbottom }}"  custom-style="height: 20%;" position="bottom" bind:close="onClosebottom" round>
+<view class="delete" bindtap="delete" >删除</view>
+<view class="cancel" bindtap="onClosebottom">取消</view>
+</van-popup>
+
+
+<view wx:if="{{isnull}}">
+  <view class="nullcontainer">
+  <image class="null" src="/img/null.png" mode="widthFix"></image>
+</view>
+</view>
+
+<block wx:if="{{isloading}}">
+  <view class="loadingcontainer"> 
+  <image class="loading" src="/img/loading.gif" mode="widthFix"></image>
+加载中...
+</view>
+</block>

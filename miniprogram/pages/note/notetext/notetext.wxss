@@ -1,0 +1,13 @@
+/* pages/note/notetext/notetext.wxss */
+
+.sendtext{
+
+  position: absolute;
+  align-items: center;
+  vertical-align: center;
+  right: 0;
+  bottom: 5vw;
+  left: 85vw;
+  margin: auto;
+  font-size: large;
+}

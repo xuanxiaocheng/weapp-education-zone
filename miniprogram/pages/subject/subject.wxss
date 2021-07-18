@@ -1,0 +1,449 @@
+.title{
+  font-size:4.5vw;
+  font-weight: 600;
+  position: relative;
+  margin-top: 5vw;
+  margin-left: 3vw;
+  display: flex;
+  align-content: center;
+}
+
+.join{
+  height: 6vw;
+  width: 25vw;
+  background-color: #4972cc;
+  border-radius:1vw ;
+  position: relative;
+  left: 3vw;
+  font-size: small;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.bottoncontainer{
+  margin-top: 4vw;
+}
+
+.title2{
+  font-size:4vw;
+  font-weight: 600;
+  position: relative;
+  margin-top: 5vw;
+  margin-left: 3vw;
+ 
+}
+
+
+.zhedie{
+  font-size: 32rpx;
+}
+
+.teacher{
+  position: relative;
+  margin-top: 5vw;
+  margin-left: 2vw;
+  border-radius: 3vw;
+  height: 20vw;
+  width: 90%;
+  background-color: #fbfbfb;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+}
+
+.teacherimg{
+  position: relative;
+  width: 20%;
+  margin-left: 2vw;
+  height: auto;
+}
+
+.teachername{
+  position: relative;
+  margin-left: 6vw;
+}
+
+.titlemulu{
+overflow:hidden; 
+text-overflow:ellipsis; 
+white-space:nowrap;
+}
+
+.back{
+  width: 10vw;
+  height: 10vw;
+  position: fixed;
+  background-color: white;
+  top: 5vh;
+  left: 3vw;
+  z-index: 9999;
+  border-radius: 99vw;
+  border-radius: 50%;
+  border: solid 0.1px; 
+  border-color:#acacac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.note{
+  width: 10vw;
+  height: 10vw;
+  position: fixed;
+  background-color: white;
+  top: 5vh;
+  left: 16vw;
+  z-index: 9999;
+  border-radius: 99vw;
+  border-radius: 50%;
+  border: solid 0.1px; 
+  border-color:#acacac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.cell_title{
+  color: #000;
+}
+
+.cell_titlechosen{
+  color: #406ac7;
+  font-weight:550;
+}
+
+
+.testicon{
+  width: 13%;
+  position: relative;
+  top: 3vw;
+  left: 5vw;
+}
+
+.testcontainer{
+ 
+  position: relative;
+  height: 32vw;
+  background-color: #fff;
+  width: 95%;
+  left: 0;
+  right: 0;
+  border-radius: 2vw;
+  margin: 2vw auto;
+ 
+}
+
+.testtitle{
+ 
+  font-size: small;
+  
+}
+
+.testtitlecontainer{
+  position: absolute;
+  top: 7vw;
+  left: 20vw;
+  width: 60%;
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+  white-space:nowrap;
+}
+
+.testtitle2{
+  position: relative;
+  top: -1vw;
+  left: 6vw;
+  font-size: small;
+  color: #77797d
+}
+
+
+.botton{
+
+position: absolute;
+left:85%;
+top: 7vw;
+
+}
+
+
+.fatie{
+  width: 13%;
+  position: fixed;
+  z-index: 999;
+  top: 85vh;
+  left: 80vw;
+  height: auto;
+}
+
+.tabs{
+  position: relative;
+  left: 5vw;
+}
+
+.titleque{
+  width: 87%;
+  position: relative;
+  left: 2vw;
+  font-size: medium;
+ 
+}
+
+.questionall{
+position: relative;
+
+}
+
+.question{
+  position: relative;
+  display: flex;
+  align-items: center;
+  align-content: center;
+  padding-top: 3vw;
+  padding-bottom: 3vw;
+  padding-left: 3vw;
+}
+
+
+
+.zhezhao{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  opacity: 0.1;
+  overflow: hidden;
+  z-index: 1000;
+ 
+}
+
+
+
+.commodity_attr_box1 {
+  height: 400rpx;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+  border-top-left-radius: 4vw;
+  border-top-right-radius: 4vw;
+}
+
+
+/*使屏幕变暗  */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+/*对话框 */
+.commodity_attr_box {
+  height: 70vh;
+  width: 100%;
+  overflow: scroll;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+  border-top-left-radius: 4vw;
+  border-top-right-radius: 4vw;
+}
+
+
+.noteicon{
+  position: relative;
+  width: 10%;
+  height: auto;
+  left: 5vw;
+}
+
+.notetop{
+  position: relative;
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 10vw;
+  margin-bottom: 2vw;
+}
+
+.notetitle{
+  position: relative;
+  font-weight: 550;
+  left: 6vw;
+}
+
+.add{
+  position: absolute;
+  right: 5vw;
+}
+
+.sendtext{
+
+  position: absolute;
+  align-items: center;
+  vertical-align: center;
+  right: 0;
+  bottom: 5vw;
+  left: 85vw;
+  margin: auto;
+  font-size: large;
+}
+
+.backicon2{
+  width: 10%;
+  position: absolute;
+  left: 2vw;
+  bottom: 5vw;
+  height: auto;
+}
+
+.notealltitle{
+  position: relative;
+  font-weight: 550;
+  font-size: small;
+  margin-bottom:1vw ;
+  left: 5vw;
+  width: 90%;
+  color: #000;
+  overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+ 
+}
+
+.scroll{
+  height: 55vh;
+}
+
+.label{
+
+}
+
+.notealltext{
+  position: relative;
+  font-size: small;
+  left: 5vw;
+  width: 90%;
+  overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+
+.notecontainer{
+  position: relative;
+  height: 13vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+.item-hover {
+  background: rgb(230, 230, 230);
+}
+
+.fengge{
+  height: 0.2vw;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+
+
+
+
+.right{
+
+  background-color: #ee0a24;
+  width: 65px;
+  height: 18vw;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.keepimg{
+  width: 6%;
+  position: absolute;
+  right: 5vw;
+  height: auto;
+}
+
+
+.topfix{
+  position: fixed;
+  top: 0;
+  z-index: 999;
+}
+
+.topfixloading{
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loadingimg{
+  width: 30%;
+  height: auto;
+}
+
+.tabsall{
+  position: relative;
+  top: 30vh;
+}
+
+.single{
+  display: flex;
+  align-content: center;
+}
+
+.unlogin{
+  height: 63vh;
+  width: 100%;
+  background-color:#f1f1f1;
+  position: absolute;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lock{
+  width: 20%;
+}
+
+.null{
+  margin: auto;
+  right: 0;
+  left: 0;
+  position: relative;
+  top: 10vw;
+  height: auto;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+}

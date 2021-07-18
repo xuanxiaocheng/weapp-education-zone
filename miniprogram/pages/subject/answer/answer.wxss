@@ -1,0 +1,19 @@
+/* pages/answer/answer.wxss */  
+.sendtext{
+    color: #b3b1b1;
+    position: absolute;
+    align-items: center;
+    vertical-align: center;
+    right: 0;
+    left: 85vw;
+    margin: auto;
+    font-size: large;
+  }
+
+  .disend{
+    position: fixed;
+    bottom: 0;
+    height: 15vw;
+    width: 100%;
+    }
+  

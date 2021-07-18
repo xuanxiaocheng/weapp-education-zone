@@ -1,0 +1,33 @@
+
+<van-popup show="{{ show }}" position="bottom"
+  custom-style="height: 50%" round bind:close="onClose">
+  <view class="enter" bindtap="enter">确认</view>
+  <view class="cancel" bindtap="onClose">取消</view>
+  <picker-view  indicator-style="height: 50px;" style="width: 100%; height: 40%;position:fixed;bottom:0" value="{{value}}" bindchange="picker">
+      <picker-view-column>
+        <view wx:for="{{teachercourse}}"  style="line-height: 50px; text-align: center;">{{index+1}}.{{item.courseName}}</view>
+      </picker-view-column>
+  </picker-view>
+</van-popup>
+
+<view  class="picker">
+  <text style="font-weight:550;">课程群:</text>
+  <view bindtap="showPopup" class="{{picker == '请选择...'?'pickertext':'pickertextchosen'}}">{{picker}}</view>
+  <van-icon class="info" name="info" bindtap="info"/>
+</view>
+
+
+<editor style="height:auto; min-height:1px; top:3vw; position:reletive ; left:4vw ; width:93%"
+ bindinput="text" id="editor2"   placeholder="通知正文..."></editor>
+
+
+
+<view class="disend">
+  <block wx:if="{{text.length==1||picker == '请选择...'}}">
+<text class="sendtext">发布</text>
+</block>
+<block wx:else>
+<text style="color:#4972cc" class="sendtext" bindtap="send">发布</text>
+</block>
+</view>
+

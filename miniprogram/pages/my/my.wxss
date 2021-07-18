@@ -1,0 +1,62 @@
+.swiperimg{
+  position: relative;
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 1vw;
+}
+
+.singleimg{
+  position: relative;
+  
+}
+
+.banner{
+  margin-top: 5vw;
+  width: 95%;
+  position: relative;
+  align-content: center;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  border-radius: 2vw;
+}
+
+.bannercontainer{
+  position: relative;
+  align-content: center;
+  justify-content: center;
+  display: flex;
+
+}
+
+.nullcontainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65vw;
+
+}
+
+
+
+.null{
+  width: 50%;
+  height: auto;
+}
+
+
+.delete{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 5vw;
+  padding-bottom: 5vw;
+  color: crimson;
+}
+
+.cancel{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

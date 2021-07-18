@@ -1,0 +1,110 @@
+.add{
+  margin-left: 5vw
+}
+
+
+
+
+.jpg{
+  position: relative
+}
+
+
+.jpg0{
+  position: absolute;
+  width: 80%;
+ justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  top: 5vw;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border-top:5%;
+}
+
+.div{
+  height: 10vw;
+  width: 90%;
+  background: #f7f7f7;
+
+  }
+
+  .jpg0{
+    position: relative;
+    left: 4vw;
+    width: 209rpx;
+   height: 209rpx;
+   
+  }
+
+  .jpgarr{
+    position: relative;
+    width: 209rpx;
+    height: 209rpx;
+    padding:15rpx 0 15rpx 15rpx;
+    
+  }
+
+
+  .images-item{
+    
+    width: 209rpx;
+    height: 209rpx;
+  
+  }
+
+  
+.form-first-bottom{
+  position: relative;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  padding-bottom:20rpx;
+  width:100%;
+  left: 5vw;
+  margin: auto;
+  height: auto;
+  flex-wrap:wrap;
+  
+}
+
+
+
+
+.disend{
+  position: fixed;
+  bottom: 0;
+  height: 15vw;
+  width: 100%;
+  }
+
+.sendtext{
+  color: #b3b1b1;
+  position: absolute;
+  align-items: center;
+  vertical-align: center;
+  right: 0;
+  left: 85vw;
+  margin: auto;
+  font-size: large;
+}
+
+.delete{
+  position: relative;
+  top: -28vw;
+  left: 22vw;
+}
+
+.cansendtext{
+  color: #3887e9;
+  position: absolute;
+  align-items: center;
+  vertical-align: center;
+  right: 0;
+  left: 85vw;
+  margin: auto;
+  font-size: large;
+}
+
+

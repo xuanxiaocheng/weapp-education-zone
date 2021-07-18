@@ -1,0 +1,174 @@
+.fenggexian{
+background-color: #f1f1f1;
+height: 0.2vw;
+width: 95%;
+position: relative;
+margin:auto;
+left: 0;
+right: 0;
+}
+
+.name{
+font-size: medium;
+position: absolute;
+left: 22vw;
+top: 0.5vw;
+width: 75%;
+margin: auto;
+/*设置为弹性盒子*/
+display:-webkit-box;
+/* 表示几行后超出隐藏 */
+-webkit-line-clamp:1;
+/* 超出隐藏 */
+overflow:hidden;
+/*超出显示为省略号*/
+text-overflow:ellipsis;
+-webkit-box-orient:vertical;
+
+}
+
+.answer{
+ 
+  left: 22vw;
+  top: 7.5vw;
+  color: darkgray;
+  font-size: small;
+  position: absolute;
+  width: 75%;
+  margin: auto;
+  /*设置为弹性盒子*/
+  display:-webkit-box;
+  /* 表示几行后超出隐藏 */
+  -webkit-line-clamp:1;
+  /* 超出隐藏 */
+  overflow:hidden;
+  /*超出显示为省略号*/
+  text-overflow:ellipsis;
+  -webkit-box-orient:vertical;
+
+}
+
+.single{
+  position: relative;
+  padding-bottom: 5vw;
+  display: flex;
+  align-items: center;
+}
+
+
+
+.imgxuanke{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unlogin{
+  width: 50%;
+}
+
+
+.classcontainer{
+  position: relative;
+  width: 95%;
+  height: auto;
+  border-radius: 2vw;
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+
+
+}
+
+
+.classicon{
+  margin-top:3vw;
+  margin-bottom:3vw;
+  width: 15vw;
+  height: 15vw;
+  left: 3vw;
+  position: relative;
+  border-radius: 2vw;
+}
+
+
+.titlemyclass{
+  position: absolute;
+  top: 5vw;
+  width: 50%;
+  margin-left: 25vw;
+  font-weight: 500;
+  font-size: small;
+  font-size-adjust: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+
+.teacher{
+  position: absolute;
+  top: 12vw;
+  left:25vw;
+  font-weight: 500;
+  font-size-adjust: inherit;
+  font-size: small;
+  color: darkgray;
+}
+
+
+.unread{
+  position: absolute;
+  background-color: #f95050;
+  width: 6vw;
+  height: 6vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 550;
+  border-radius: 99vw;
+  font-size: small;
+  z-index: 1000;
+  top: 0vh;
+  left: 13vw;
+}
+
+.loading{
+  width: 10%;
+  position: relative;
+  
+}
+
+.loadingcontainer{
+height: 10vw;
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: small;
+top: 0;
+width: 100%;
+}
+
+
+
+.nullcontainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65vw;
+
+}
+
+
+
+.null{
+  width: 50%;
+  height: auto;
+}

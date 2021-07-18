@@ -1,0 +1,20 @@
+<navigator  open-type="navigateBack" hover-class="none">
+<view class="back" style="background:#ffffff; opacity:0.6;"   >
+  <van-icon class="backicon" size="23px" name="arrow-left" />
+</view>
+</navigator>
+
+<view class="top">
+<image class="topimg" src="{{type[id].url}}" mode="widthFix"></image>
+</view>
+
+
+<view class="context" wx:for="{{course}}">
+<view class="classcontainer" bindtap="subject" data-id="{{item.courseId}}">
+<image class="img" src="{{item.coverUrl}}" mode="aspectFill"></image>
+<text class="title">{{item.courseName}}</text>
+<text class="teacher">{{item.teacherId}}·计算机学院</text>
+<text class="stunum">{{item.stuNum}}人已学</text>
+</view>
+</view>
+

@@ -1,0 +1,114 @@
+/* miniprogram/pages/teacher/add.wxss *//* pages/answer/answer.wxss */  
+.sendtext{
+  color: #b3b1b1;
+  position: absolute;
+  align-items: center;
+  vertical-align: center;
+  right: 0;
+  left: 85vw;
+  margin: auto;
+  font-size: large;
+}
+
+.disend{
+  position: fixed;
+  bottom: 0;
+  height: 15vw;
+  width: 100%;
+  }
+
+.delete{
+
+ left: 5vw;
+ color: crimson;
+ position: absolute;
+ align-items: center;
+ vertical-align: center;
+ margin: auto;
+ font-size: large;
+}
+
+
+.enter{
+  position: absolute;
+  right: 5vw;
+  top: 5vw;
+  color: #4972cc;
+}
+
+.cancel{
+  position: absolute;
+  left: 5vw;
+  top: 5vw;
+}
+
+.picker{
+  position: relative;
+  margin: 3vw;
+  padding: 1vw;
+  display: flex;
+  align-items: center;
+}
+
+.pickertext{
+  border-width: 0.3vw;
+  border-color: #acacac;
+  border-style: solid;
+  border-radius: 1vw;
+  padding: 1vw;
+  width: 70%;
+  margin-left: 3vw;
+  color: #acacac;
+  display: flex;
+  justify-content: center;
+}
+
+.pickertextchosen{
+  border-width: 0.3vw;
+  border-color: #acacac;
+  border-style: solid;
+  border-radius: 1vw;
+  font-weight: 550;
+  padding: 1vw;
+  width: 70%;
+  margin-left: 3vw;
+  color: #666;
+  display: flex;
+  justify-content: center;
+}
+
+.info{
+  left:2vw;
+  position: relative;
+}
+
+.idiconcontainer{
+  text-align: center;
+  z-index: 2;
+}
+
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+
+
+.block {
+  width: 300px;
+  height: 300px;
+  border-radius: 2vw;
+  background-color: #fff;
+  overflow: hidden;
+  z-index: 1;
+}
+
+
+.titlehelp{
+  position: relative;
+  color: #fff;
+  z-index: 2;
+}

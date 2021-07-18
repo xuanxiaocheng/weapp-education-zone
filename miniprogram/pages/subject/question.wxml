@@ -1,0 +1,192 @@
+<!--pages/subject/question.wxml-->
+<navigator  open-type="navigateBack" hover-class="none">
+<view class="back" style="background:#ffffff; opacity:0.6;"   >
+  <van-icon class="backicon" size="23px" name="arrow-left" />
+</view>
+</navigator>
+
+
+
+
+<view class="top">    
+<image class="wenhao" style="opacity:{{0.5}}" src="/img/wenhao.png" mode="widthFix"></image>
+<view class="title">{{question.title}}</view>
+<view class="body">{{question.body}}</view>
+
+
+<wxs module="m1">
+      var getfirstimg = function(str0) {
+          var ss = str0.substring(0,str0.length-3)
+          return ss;
+      }
+      module.exports.getfirstimg = getfirstimg;
+    </wxs>  
+
+    <wxs module="m2">
+      var getfirstimg2 = function(str2) {
+          var ss = str2.split('record/')[1]
+          var ss1 = ss.split('second')[0]
+          console.log(ss1)
+          return ss1;
+      }
+      module.exports.getfirstimg2 = getfirstimg2;
+    </wxs>  
+
+
+<view class="time">{{m1.getfirstimg(question.createTime)}}</view>
+
+</view>
+
+
+<view class="context">
+<view class="titlecontainer">
+<van-icon size="20px" name="chat" />
+<text>回答 {{commentList.length}}</text>
+</view>
+<van-divider />
+</view>
+
+
+<view class="allcomment">
+<view wx:for="{{commentList}}" bindlongpress="showPopupbottom"  hover-class="item-hover" class="comment" data-commentid="{{item.id}}" data-user="{{item.commentUserId}}">
+<view class="idcontainer">
+<image class="touxiang" src="{{item.headUrl}}" mode="aspectFill"></image>
+<view class="commentname">{{item.commentUserName}}</view>
+<view class="timeanswer">{{m1.getfirstimg(item.createTime)}}</view>
+
+</view>
+<view class="content">{{item.content}}</view>
+<block wx:if="{{item.recordUrl!=null&&item.recordUrl!=''}}">
+  <view  class="dingweicontainer2">
+<view class="maikecontainer3"  >
+<block wx:if="{{m2.getfirstimg2(item.recordUrl)<10}}">
+<view>0:0{{m2.getfirstimg2(item.recordUrl)}}</view>
+</block>
+<block wx:if="{{m2.getfirstimg2(item.recordUrl)>=10}}">
+<view>0:{{m2.getfirstimg2(item.recordUrl)}}</view>
+</block>
+<block wx:if="{{!isplaying}}">
+<van-icon class="playicon2"  bindtap="playrecord2" data-recordurl="{{item.recordUrl}}" size="26px" name="play-circle-o" color="#fff"/>
+</block>
+<block wx:if="{{isplaying}}">
+<van-icon class="playicon2" size="26px" bindtap="stoprecord" name="stop-circle-o" color="#fff"/>
+<image class="isplay" src="/img/music.gif" mode="widthFix"></image>
+</block>
+</view></view>
+
+</block>
+</view>
+</view>
+
+<view class="juxing">
+
+<view class="answer">
+<view class="anwsergroug"  bindtap="clickme">
+  <block wx:if="{{question.createUserId!=id}}">
+  <text class="writetext" >✎ 我来回答...</text>
+</block>
+<block wx:if="{{question.createUserId==id}}">
+  <text class="writetext"  bindtap="clickme">✎ 我来补充...</text>
+</block>
+</view>
+<view class="botton">
+<block wx:if="{{question.createUserId!=id}}">
+
+  <button class="unkonwbutton" bindtap="unknow" size="mini" >
+    <view  class="unknowbutton" >
+  <van-icon name="question-o" size="15px"/>我也不懂 {{question.unKnown}}</view>
+  </button>
+  
+</block>
+<block wx:if="{{question.createUserId==id}}">
+  <button class="unkonwbutton" bindtap="rewrite" size="mini" >
+    <view  class="unknowbutton" >
+  <van-icon name="info-o" size="15px"/>我要修改</view>
+  </button>
+</block></view>
+</view>
+</view>
+
+
+
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+   
+<block wx:if="{{!recordingend}}">
+<view class="maikeicon">
+<image class="maike" bindlongpress="recording" bindtouchend="recordend" src="/img/maike.png" mode="widthFix"></image>
+</view>
+<view class="tips">长按说话</view>
+</block>
+
+
+
+<block wx:if="{{temtext==''&&recordtemurl==''}}">
+  <text class="send" >发布</text>
+</block>
+
+<block wx:if="{{temtext!=''||recordtemurl!=''}}">
+  <text class="send"  style="color:#4972cc"  bindtap="commont" >发布</text>
+</block>
+
+    <van-cell-group class="answerwrite" border="{{false}}">  
+  <van-field
+  bind:change="answertext"
+    type="textarea"
+    placeholder="说点什么..."
+    autosize
+    border="{{ false }}"
+    maxlength="200"
+  />
+</van-cell-group>
+
+
+<view wx:if="{{recording}}" class="dingweicontainer">
+<view class="maikecontainer">
+<view>正在录音...</view>
+<block wx:if="{{recordingtime<10}}">
+<view>0:0{{recordingtime}}</view>
+</block>
+<block wx:if="{{recordingtime>=10}}">
+<view>0:{{recordingtime}}</view>
+</block>
+</view></view>
+
+<view wx:if="{{recordingend}}" class="dingweicontainer">
+<view class="maikecontainer2"  >
+<block wx:if="{{recordingtime<10}}">
+<view>0:0{{recordingtime}}</view>
+</block>
+<block wx:if="{{recordingtime>=10}}">
+<view>0:{{recordingtime}}</view>
+</block>
+<block wx:if="{{!isplaying}}">
+<van-icon class="playicon"  bindtap="playrecord" size="26px" name="play-circle-o" color="#fff"/>
+</block>
+<block wx:if="{{isplaying}}">
+<van-icon class="playicon" size="26px" bindtap="stoprecord" name="stop-circle-o" color="#fff"/>
+<image class="isplay" src="/img/music.gif" mode="widthFix"></image>
+</block>
+<van-icon name="close"  bindtap="deleterecord" class="deleteicon" size="26px"  color="#fff"/>
+</view></view>
+
+
+<view class="form-first-bottom1">
+<block wx:for="{{jpgarr}}" wx:key="id">
+        <view class='jpgarr1' wx:if="{{jpgarr.length > 0}}" >
+          <image class='images-item1' src='{{item}}'  mode="aspectFill" data-index="{{index}}">
+          </image>
+        </view>
+      </block>
+    </view>
+
+<i-icon  class="answerphoto" type="picture" size="28" bindtap="addjpg" />
+  </view>
+
+
+  <van-popup show="{{ showbottom }}" custom-style="height: 20%;" position="bottom" bind:close="onClosebottom" round>
+<view class="delete" bindtap="delete">删除</view>
+<view class="cancel" bindtap="onClosebottom">取消</view>
+</van-popup>

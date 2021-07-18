@@ -1,0 +1,474 @@
+/* pages/index/index.wxss */
+page{
+  background-color: #fff;
+}
+
+.top{
+  width: 100%;
+}
+
+
+.news{
+  width: 95%;
+  height: 20vw;
+  background-color: #fff;
+  border-radius: 2vw;
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  border-radius: 5vw;
+  background-color: white;
+  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.06); 
+  display: flex;
+  align-items: center;
+}
+
+
+.myclassnew{
+  width: 95%;
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-content: center;
+  margin-top: 20rpx;
+
+}
+
+
+.newstext{
+  position: absolute;
+  font-size: small;
+  z-index: 1;
+  left: 30vw;
+  color:#acacac;
+}
+
+.newsicon{
+  position: relative;
+  width: 12%;
+  height: auto;
+  left: 4vw;
+}
+
+.newsshuiyin{
+  width: 50%;
+  position: absolute;
+  height: auto;
+  right:5vw;
+}
+
+
+
+.bottoncontainer{
+  height: 35vw;
+  position: relative;
+  flex-direction:row;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  width: 96%;
+ margin: auto;
+ left: 0;
+ right: 0;
+ 
+
+}
+
+.bottonicon{
+  width: 60px;
+  height: 60px;
+}
+
+.name{
+  position: relative;
+  font-size: 10pt;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  color: #acacac;
+  display: flex;
+  left: -1.5vw;
+  align-items: center;
+  vertical-align: center;
+  justify-content: center;
+}
+
+.iconcontainer{
+  width: 20%;
+  padding: 3vw 0 0 0;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+  
+}
+
+
+.recommend{
+  position: relative;
+  font-size: medium;
+  left: 5vw;
+  font-weight: 600;
+}
+
+.sutiao{
+  width: 3%;
+  position: relative;
+}
+
+.recontainer{
+  height: 10vw;
+  position: relative;
+  align-items: center;
+  vertical-align: center;
+  margin: 50rpx 0 0 0;
+}
+
+.hi{
+  position: relative;
+  font-size: larger;
+  font-weight: 550;
+  left: 5vw;
+
+  
+}
+
+.xuanke{
+  position: relative;
+  font-size: medium;
+  font-weight: 550;
+  left: 6vw;
+  margin-top: 3vw;
+  
+}
+
+.hicontainer{
+  margin-top: 5vw;
+}
+
+.juzi{
+  position: relative;
+  left: 5vw;
+  color: #acacac;
+}
+
+.juzicontainer{
+  margin: 20rpx 0 0 0;
+  position: relative;
+}
+
+.search{
+  position: relative;
+  top: 5vw;
+}
+
+.reimg{
+  position: relative;
+  width: 200rpx;
+  top: 5vw;
+  left: 4vw;
+  height: 150rpx;
+  border-radius: 1vw;
+}
+
+.botton{
+  position: relative;
+  right: 0;
+  top: -9vw;
+  left: -13vw;
+
+}
+
+.title{
+  position: relative;
+  top: -9vw;
+  font-weight: 500;
+  left: 8vw;
+  font-size: 3.8vw;
+}
+
+.title2{
+  position: relative;
+  color: #acacac;
+  top:  -2vw;
+  left: -18.5vw;
+  font-size: small;
+}
+
+.beijing{
+  background-color: #f9f9f9;
+  width: 90%;
+  margin: auto;
+  height: 200rpx;
+  left: 0;
+  right: 0;
+  border-radius: 2vw;
+  margin-bottom: 2vw;
+}
+
+.swiper{
+  height: 70vw;
+
+}
+
+.tuijian{
+  width: 95%;
+  height: 92vw;
+  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.06); 
+  margin: auto;
+  left: 0;
+  right: 0;
+  border-radius: 2vw;
+
+}
+
+.subject{
+  position: relative;
+  top: 2vw;
+  left: 4vw;
+  font-weight: 600;
+}
+
+.index{
+  position: relative;
+  left: 60vw;
+  top: 2vw;
+  font-size: small;
+  color: #acacac;
+}
+
+.retextcontaine{
+  margin-bottom:30rpx;
+}
+
+.more{
+  position: relative;
+  font-size: small;
+  color: #acacac;
+  left: 40vw;
+  top: 3vw;
+  margin-bottom: 30rpx;
+  
+}
+
+.fuhao{
+  position: relative;
+  left: 40vw;
+  top: 4vw;
+}
+
+.lunbotucontainer{
+  position: relative;
+  width: 95%;
+  height: 30vh;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 3vw;
+  overflow: hidden;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+}
+
+.xuankeicon{
+  width: 8%;
+  position: relative;
+  left: 4vw;
+  top: 3vw;
+  height: auto;
+}
+
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  z-index: 999;
+  position: relative;
+}
+
+.block {
+  width: 90%;
+  height: 40vh;
+  background-color: #fff;
+  z-index: 999;
+  border-radius: 3vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  position: relative;
+  justify-content: center;
+}
+
+
+.titlemid{
+
+  display: flex; 
+  font-weight: 550;
+  font-size: small;
+
+}
+
+
+.inputword{
+  text-align: center;
+  font-size: small;
+
+}
+
+.classcontainer{
+  width: 95%;
+  height: auto;
+  border-radius: 2vw;
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  margin-top: 20rpx;
+
+}
+
+.classicon{
+  margin-top:3vw;
+  margin-bottom:3vw;
+  width: 35vw;
+  height: 20vw;
+  left: 3vw;
+  position: relative;
+  border-radius: 2vw;
+  border-width: 0.3vw;
+  border-style: solid;
+  border-color: #f1f1f1;
+}
+
+
+.titlemyclass{
+  position: absolute;
+  top: 6vw;
+  width: 50%;
+  margin-left: 45vw;
+  font-weight: 500;
+  font-size: small;
+  font-size-adjust: inherit;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+}
+
+
+.teacher{
+  position: absolute;
+  top: 14vw;
+  left: 45vw;
+  font-weight: 500;
+  font-size-adjust: inherit;
+  font-size: small;
+  color: darkgray;
+}
+
+.imgxuanke{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.unlogin{
+  width: 50%;
+  height: auto;
+}
+
+.tipslogin{
+  position: relative;
+  font-size: small;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vw;
+  color: #acacac;
+}
+
+
+.close{
+  position: absolute;
+  left: 35vw;
+  top: 0;
+}
+
+.weui-input{
+  border-width: 0.5px;
+  border-style: solid;
+  border-color: #acacac;
+  padding: 2vw;
+  border-radius: 3vw;
+}
+
+
+.unread{
+  position: absolute;
+  background-color: #f95050;
+  width: 5vw;
+  height: 5vw;
+  top: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 550;
+  border-radius: 99vw;
+  font-size: small;
+}
+
+
+
+.notice{
+  width: 100%;
+  font-size: small;
+  margin: auto;
+  /*设置为弹性盒子*/
+  display:-webkit-box;
+  /* 表示几行后超出隐藏 */
+  -webkit-line-clamp:2;
+  /* 超出隐藏 */
+  overflow:hidden;
+  /*超出显示为省略号*/
+  text-overflow:ellipsis;
+  -webkit-box-orient:vertical;
+ 
+}
+
+.noticetitle{
+  margin-bottom: 1vw;
+}
+
+.swiper_container{
+  margin-left: 5vw;
+  position: relative;
+}
+
+.nullcontainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65vw;
+
+}
+
+
+
+.null{
+  width: 50%;
+  height: auto;
+}

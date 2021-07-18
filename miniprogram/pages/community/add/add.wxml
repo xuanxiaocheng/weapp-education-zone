@@ -1,0 +1,88 @@
+
+
+<view class="form-first-bottom">
+<block wx:for="{{jpgarr}}" wx:key="id">
+        <view class='jpgarr' wx:if="{{jpgarr.length > 0}}" >
+          <image class='images-item' src='{{item}}'  mode="aspectFill" data-index="{{index}}">
+          </image>
+          <van-icon custom-class="delete" name="clear" data-index="{{index}}" bindtap="deleteimg" />
+        </view>
+      </block>
+      <view  wx:if="{{jpgarr.length<9}}" >
+      <image class="jpgarr" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/icon/%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87%20(1).png?sign=ade1b62dcf658c153dfc0fed8eab00e1&t=1617848077" mode="widthFix"  text="{{jpgnumber}}"  bindtap="addjpg" />
+      </view>
+    </view>
+
+
+
+
+
+<view wx:if="{{interview==''||subject==''}}">
+<view class="disend">
+<text class="sendtext">提交</text>
+</view></view>
+
+
+<view wx:if="{{interview!=''&subject!=''}}">
+  <view class="disend">
+<text class="cansendtext" bindtap="update2">提交</text>
+</view>
+</view>
+
+
+
+
+
+
+
+
+
+<van-popup
+  show="{{ show }}"
+  round
+  position="bottom"
+  custom-style="height: 20%"
+  bind:close="onClose"
+>
+  
+
+
+
+</van-popup>
+
+
+
+
+
+
+<editor style="height:auto; min-height:50px; position:reletive ; left:4vw ; width:93%"
+ bindinput="interview" placeholder="输入想要分享的内容..."></editor>
+
+
+
+
+<van-cell title="话题" icon="fire-o" is-link value="{{subject}}" bindtap="showPopup">
+</van-cell>
+
+
+
+<van-popup
+  show="{{ show }}"
+  round
+  overlay="{{false}}"
+  position="bottom"
+  custom-style="height: 50%"
+  bind:close="onClose"
+>
+
+<van-picker
+  show-toolbar
+  title=""
+  columns="{{huati}}"
+  bind:cancel="onClose"
+  bind:confirm="onChange"
+  item-height="44"
+/>
+
+</van-popup>
+

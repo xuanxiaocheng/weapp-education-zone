@@ -1,0 +1,73 @@
+
+
+<text class="title">在线课堂微学习空间教师端</text>
+
+ 
+  <view class="inputcontainer">
+  <van-cell-group border="{{false}}">
+  <van-field
+   autosize
+    placeholder="账号"
+    bind:change="onChange"
+    size="large"
+  />
+  
+  <van-field
+    autosize
+    placeholder="密码"
+    border="{{ false }}"
+    bind:change="onChange1"
+    password
+    size="large"
+  />
+</van-cell-group>
+
+</view>
+
+
+<van-icon  name="question" bind:click="onClickShow" class="help" color="#acacac" size="20px" />
+
+
+
+
+<view class="botton">
+<button style="background-color:#4972cc;color:#fff"  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" >登录</button>
+</view>
+
+
+
+
+<image class="imgchahua" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/588ku_4d85fe33546136759e2b236c5bf27dc4_12813777.png?sign=b38abaa42e35a4a9ed7b08a16b88c360&t=1615428573" mode="widthFix"></image>
+
+
+<van-overlay show="{{ show }}" bind:click="onClickHide" >
+<view class="wrapper">
+  <view class="block" catch:tap="noop"  >
+   <view class="titlecontainer"  catch:tap="noop" >
+   <text class="titlehelp"  >帮助</text>
+   <van-icon class="close" color="#fff" size="26px" name="close" bindtap="onClickHide" />
+  </view>
+
+  <view class="contextcontainer">
+
+    <view class="idiconcontainer">
+   <image class="idicon" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%BA%AB%E4%BB%BDicon.png?sign=2a481983c77938b1449c1d70629756d6&t=1611994097" mode="widthFix" ></image>
+  </view>
+  
+  <view class="text">
+   <view class="help-q">1、帐号和密码是什么？</view>
+            <view class="help-a">
+              <text user-select>帐号和密码与后台管理系统相同</text>
+            </view>
+<view class="help-q">2、修改密码</view>
+            <view class="help-a">
+              <text user-select>登录后台管理系统，在“设置”中修改密码。</text>
+            </view>
+            <view class="help-q">3、忘记密码？</view>
+            <view class="help-a">
+              <text user-select>访问后台管理系统进行忘记密码操作</text>
+            </view>
+          </view>
+        </view>
+  </view></view>
+</van-overlay>

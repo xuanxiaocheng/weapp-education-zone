@@ -1,0 +1,19 @@
+
+<editor style="height:auto; min-height:1px; position:reletive ; left:4vw ; width:93%"
+ bindinput="title" placeholder="标题"></editor>
+
+<van-divider dashed  />
+
+<editor style="height:auto; min-height:1px; position:reletive ; left:4vw ; width:93%"
+ bindinput="text" placeholder="正文内容..."></editor>
+
+
+
+<view class="disend">
+  <block wx:if="{{title==''||text==''||title.length==1||text.length==1}}">
+<text class="sendtext">提交</text>
+</block>
+<block wx:if="{{title.length>1&&text.length>1}}">
+<text style="color:#4972cc" class="sendtext" bindtap="send">提交</text>
+</block>
+</view>

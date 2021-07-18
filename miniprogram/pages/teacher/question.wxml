@@ -1,0 +1,90 @@
+<!--pages/subject/question.wxml-->
+<navigator  open-type="navigateBack" hover-class="none">
+<view class="back" style="background:#ffffff; opacity:0.6;"   >
+  <van-icon class="backicon" size="23px" name="arrow-left" />
+</view>
+</navigator>
+
+
+
+
+<view class="top">
+<image class="wenhao" style="opacity:{{0.5}}" src="/img/wenhao.png" mode="widthFix"></image>
+<view class="title">{{question.title}}</view>
+<view class="body">{{question.body}}</view>
+</view>
+
+
+
+<view class="context">
+<view class="titlecontainer">
+<van-icon size="20px" name="chat" />
+<text>回答 {{commentList.length}}</text>
+</view>
+<van-divider />
+</view>
+
+
+<view class="allcomment">
+<view wx:for="{{commentList}}" bindlongpress="showPopupbottom"  hover-class="item-hover" class="comment" data-commentid="{{item.id}}" data-user="{{item.commentUserId}}">
+<view class="idcontainer">
+<image class="touxiang" src="{{item.headUrl}}" mode="aspectFill"></image>
+<view class="commentname">{{item.commentUserName}}</view>
+</view>
+<view class="content">{{item.content}}</view>
+</view>
+</view>
+
+<view class="juxing">
+
+<view class="answer">
+<view class="anwsergroug"  bindtap="clickme">
+  <text class="writetext" >✎ 我来回答...</text>
+</view>
+
+</view>
+</view>
+
+
+
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+   
+<block wx:if="{{temtext==''}}">
+  <text class="send" >发布</text>
+</block>
+
+<block wx:if="{{temtext!=''}}">
+  <text class="send"  style="color:#4972cc"  bindtap="commont" >发布</text>
+</block>
+
+    <van-cell-group class="answerwrite" border="{{false}}">  
+  <van-field
+  bind:change="answertext"
+    type="textarea"
+    placeholder="说点什么..."
+    autosize
+    border="{{ false }}"
+    maxlength="200"
+  />
+</van-cell-group>
+
+<view class="form-first-bottom1">
+<block wx:for="{{jpgarr}}" wx:key="id">
+        <view class='jpgarr1' wx:if="{{jpgarr.length > 0}}" >
+          <image class='images-item1' src='{{item}}'  mode="aspectFill" data-index="{{index}}">
+          </image>
+        </view>
+      </block>
+    </view>
+
+<i-icon  class="answerphoto" type="picture" size="28" bindtap="addjpg" />
+  </view>
+
+
+  <van-popup show="{{ showbottom }}" custom-style="height: 20%;" position="bottom" bind:close="onClosebottom" round>
+<view class="delete" bindtap="delete">删除</view>
+<view class="cancel" bindtap="onClosebottom">取消</view>
+</van-popup>

@@ -1,0 +1,62 @@
+<navigator  open-type="navigateBack" hover-class="none">
+<view class="back" style="background:#ffffff; opacity:0.6;"   >
+  <van-icon class="backicon" size="23px" name="arrow-left" />
+</view>
+</navigator>
+
+
+<image class="topimg" src="{{huati1.img}}" mode="aspectFill"></image>
+
+<view class="titlecontainer">
+  <image class="img2" src="{{huati1.img}}" mode="widthFix"></image>
+<text class="topic">TOPIC・{{huati1.id}}</text>
+</view>
+
+
+<view  wx:for="{{question}}" wx:key="key">
+  <view class="singletie">
+ 
+  <image class='touxiang' src="{{item.avatarUrl}}" mode="widthFix"> </image>
+  <text class="title">{{item.name}}</text>
+  <text class="title1">{{item.realtime}}</text>
+  <view class="wenzicontainer">
+    <view class="wenzi">
+  <text  selectable>
+      {{item.interviwe.text}}
+  </text>
+</view>
+</view>
+  
+  
+  
+  
+  <view wx:if="{{item.jpgfile==''}}"></view>
+  
+  <view wx:if="{{item.length==1}}">
+    <image class='jpg11' mode='aspectFill' src='{{item.jpgfilearr[0]}}' data-jpgid="{{item.jpgfilearr[0]}}" data-jpgarr="{{item.jpgfilearr}}" bindtap="seejpg"></image>
+  </view>
+
+
+  <view wx:if="{{item.length>1}}">
+  <view class="form-first-bottom">
+       <view wx:for="{{item.jpgfilearr}}">
+        <view class='jpgarr' >
+          <image class='images-item' src='{{item}}'  mode="aspectFill" 
+           data-jpgid="{{item}}"  bindtap="seejpg">
+          </image>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+
+
+  <view class="liebiao">
+    
+
+
+    <van-icon class="comment" name="chat-o"  size="20" color="#9d9d9d" bindtap="comment"  data-id="{{item._id}}" />
+  </view>
+  <van-divider />
+  </view>
+  </view>

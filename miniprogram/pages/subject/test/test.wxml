@@ -1,0 +1,149 @@
+<navigator  open-type="navigateBack" hover-class="none">
+<view class="back" style="background:#ffffff; opacity:0.6;"   >
+  <van-icon class="backicon" size="23px" name="arrow-left" />
+</view>
+</navigator>
+
+
+<view class="top">
+</view>
+
+<block wx:if="{{!noquestion}}">
+<view class="title">
+<text>题目 <text style="color:#4bb0ff">{{now}}</text> / {{allnum}}</text></view>
+<swiper style="height:77vh;width:100%;position:relative" current="{{current}}"> 
+<view wx:for="{{List}}" >
+  <swiper-item class="swiper" catchtouchmove='catchTouchMove' >
+    <scroll-view scroll-y style="height:100%">
+  <view class="allcontainer">
+<view class="context" bindanimationend="">
+  <view class="singletitle">
+    <view wx:if="{{type=='checkList'}}">
+    <van-tag plain type="primary">判断</van-tag></view>
+    <view wx:if="{{type=='singleChoiceList'}}">
+    <van-tag plain type="primary">单选</van-tag></view>
+    <view wx:if="{{type=='mutileChoiceList'}}">
+    <van-tag plain type="primary">多选</van-tag></view>
+    <view class="question">{{item.question}}</view></view>
+
+    
+    <view wx:if="{{type=='checkList'}}">
+  <view class="choose">
+    <block wx:if="{{tofing}}">
+  <van-radio-group value="{{ radio }}" disabled="{{false}}" bind:change="onChange">
+  <view wx:for="{{choosecheckList}}">
+  <van-radio custom-class="singlechoose" use-icon-slot name="{{item.num}}">
+  <image class="icon" slot="icon" src="{{ radio === item.num ? item.Y : item.N }}" mode="aspectFit" />
+    {{item.data}}
+  </van-radio>
+</view>
+</van-radio-group>
+    </block>
+    <block wx:if="{{!tofing}}">
+  <van-radio-group value="{{ radio }}" bind:change="onChange">
+  <view wx:for="{{choosecheckList}}">
+  <van-radio custom-class="singlechoose" use-icon-slot name="{{item.num}}">
+  <image class="icon" slot="icon" src="{{ radio === item.num ? item.Y : item.N }}" mode="aspectFit" />
+    {{item.data}}
+  </van-radio>
+</view>
+</van-radio-group>
+    </block>
+</view>
+</view>
+
+    <view wx:if="{{type=='mutileChoiceList'}}">
+  <view class="choose">
+    <block wx:if="{{tofing}}">
+  <van-checkbox-group   value="{{ radio }}"  >
+  <view wx:for="{{choose}}">
+  <van-checkbox disabled custom-class="singlechoose" use-icon-slot name="{{item.num}}">
+  <image class="icon" slot="icon" src="{{!item.num? item.Y : item.N }}" mode="aspectFit"  data-index="{{index}}" />
+    {{item.data}}
+  </van-checkbox>
+</view>
+</van-checkbox-group>
+    </block>
+    <block wx:if="{{!tofing}}">
+  <van-checkbox-group  value="{{ radio }}"  >
+  <view wx:for="{{choose}}">
+  <van-checkbox custom-class="singlechoose" use-icon-slot name="{{item.num}}">
+  <image class="icon" slot="icon" src="{{!item.num? item.Y : item.N }}" mode="aspectFit" bindtap="onChange2" data-index="{{index}}" />
+    {{item.data}}
+  </van-checkbox>
+</view>
+</van-checkbox-group>
+    </block>
+</view>
+</view>
+
+<view wx:if="{{type=='singleChoiceList'}}">
+  <view class="choose">
+  <block wx:if="{{tofing}}">
+  <van-radio-group value="{{ radio }}" disabled="{{true}}"   bind:change="onChange">
+  <view wx:for="{{choose}}">
+  <van-radio custom-class="singlechoose" use-icon-slot name="{{item.num}}">
+  <image class="icon" slot="icon" src="{{ radio === item.num ? item.Y : item.N }}" mode="aspectFit" />
+    {{item.data}}
+  </van-radio>
+</view>
+</van-radio-group>
+  </block>
+  <block wx:if="{{!tofing}}">
+  <van-radio-group value="{{ radio }}" disabled="{{false}}"   bind:change="onChange">
+  <view wx:for="{{choose}}">
+  <van-radio custom-class="singlechoose" use-icon-slot name="{{item.num}}">
+  <image class="icon" slot="icon" src="{{ radio === item.num ? item.Y : item.N }}" mode="aspectFit" />
+    {{item.data}}
+  </van-radio>
+</view>
+</van-radio-group>
+  </block>
+</view>
+</view>
+
+
+</view>
+
+<block wx:if="{{tofing}}">
+<view class="istrue">
+本题回答：
+<block wx:if="{{istrue=='true'}}">
+<image class="istrueicon" src="/img/true.png" mode="widthFix"></image>
+</block>
+<block wx:if="{{istrue=='false'}}">
+<image class="istrueicon" src="/img/false.png" mode="widthFix"></image>
+</block>
+</view>
+
+<view class="right">
+正确答案为：<text style="color:#4bb0ff;font-width:550">{{righttext}}</text>。{{aexplain}}
+</view>
+</block>
+
+
+
+<view class="botton">
+<block wx:if="{{!tofing}}">
+<van-button  type="primary" color="linear-gradient(to right, #4bb0ff, #4bb0ff)" bindtap="tof" size="large">确定</van-button></block>
+<block wx:if="{{tofing}}">
+<block wx:if="{{now!=allnum}}">
+<van-button  type="primary" color="linear-gradient(to right, #4bb0ff, #4bb0ff)" bindtap="next" size="large">下一题</van-button></block>
+<block wx:if="{{now==allnum}}">
+<van-button  type="primary" color="linear-gradient(to right, #4bb0ff, #4bb0ff)" bindtap="finish" size="large">完成</van-button></block>
+</block>
+</view>
+</view>
+</scroll-view>
+</swiper-item>
+</view>
+</swiper>
+</block>
+
+
+<block wx:if="{{noquestion}}">
+<view class="noceshicontainer">
+<image class="noceshi" src="/img/noquestion.png" mode="widthFix"></image>
+</view>
+<view class="notext">本章节暂无测试</view>
+</block>

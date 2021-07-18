@@ -1,0 +1,188 @@
+<!--wxml
+<image class='ziliao' src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/11.png?sign=b93f459df2aae60ea27ff50eb92548ef&t=1597590012" mode="widthFix"></image>-->
+
+<i-message id="message" />
+
+<!--搜索栏与tabs-->
+<view class="top">
+
+
+<van-search 
+class="search"
+ use-action-slot
+  action="add-o"
+  
+  value="{{ value }}"
+  placeholder="请输入搜索关键词"
+  use-action-slot
+  bind:change="search"
+  bind:clear="allshow"
+>
+<view slot="action" bind:tap="onClick">
+  <view slot="action" >
+  <view wx:if="{{title=='0'}}">
+    <van-icon class="add" name="add" size="25" bindtap="change" />
+  </view>
+  </view>
+</view>
+</van-search>
+
+
+
+
+    <van-tabs  swipeable animated border="{{false}}" active="{{ active }}" bind:change="onChange" color="#3887e9">
+  
+
+  
+  
+<van-tab class="containertiezi" title="交流">
+
+<view  wx:for="{{question}}" wx:key="key">
+  <view class="singletie">
+ 
+  <image class='touxiang' src="{{item.avatarUrl}}" mode="widthFix"> </image>
+  <text class="title">{{item.name}}</text>
+  <text class="title1">{{item.realtime}}</text>
+  <view class="wenzicontainer">
+    <view class="wenzi">
+  <text  selectable>
+      {{item.interviwe.text}}
+  </text>
+</view>
+</view>
+  
+  
+  
+  
+  <view wx:if="{{item.jpgfile==''}}"></view>
+  
+  <view wx:if="{{item.length==1}}">
+    <image class='jpg11' mode='aspectFill' src='{{item.jpgfilearr[0]}}' data-jpgid="{{item.jpgfilearr[0]}}" data-jpgarr="{{item.jpgfilearr}}" bindtap="seejpg"></image>
+  </view>
+
+
+  <view wx:if="{{item.length>1}}">
+  <view class="form-first-bottom">
+       <view wx:for="{{item.jpgfilearr}}">
+        <view class='jpgarr' >
+          <image class='images-item' src='{{item}}'  mode="aspectFill" 
+           data-jpgid="{{item}}"  bindtap="seejpg">
+          </image>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+
+
+  <view class="liebiao">
+    
+ <view class="biaoqian" bindtap="huati" data-topic="{{item.subject}}">
+    <image class="huatiimg" src="{{item.huatiicon}}"></image>
+    <text class="biaoqiantext">{{item.subject}}</text>  
+  </view>
+
+    <van-icon class="comment" name="chat-o"  size="20" color="#9d9d9d" bindtap="comment"  data-id="{{item._id}}" />
+  </view>
+  <van-divider />
+  </view>
+  </view>
+  
+<view class="bottomrich">
+
+</view>
+
+
+</van-tab>
+
+
+
+<van-tab title="话题">
+<view  wx:for="{{huati}}">
+  <view class="huati"  hover-class="gray" bindtap="huati" data-topic="{{item.id}}">
+  <image class="fengmiantu" src="{{item.img}}" mode="widthFix" ></image>
+  <text class="huatiid">{{item.id}}</text>
+  <van-icon class="huatijt" name="arrow" />
+  </view>
+</view>
+</van-tab>
+
+
+<van-tab class="containertiezi" title="我的">
+
+<block wx:if="{{islogin!=''}}">
+<view  wx:for="{{my}}" wx:key="key">
+  <view class="singletie">
+ 
+  <image class='touxiang' src="{{item.avatarUrl}}" mode="widthFix"> </image>
+  <text class="title">{{item.name}}</text>
+  <text class="title1">{{item.realtime}}</text>
+  <view class="wenzicontainer">
+    <view class="wenzi">
+  <text  selectable>
+      {{item.interviwe.text}}
+  </text>
+</view>
+
+
+</view>
+  
+  
+  
+  
+  <view wx:if="{{item.jpgfile==''}}"></view>
+  
+  <view wx:if="{{item.length==1}}">
+    <image class='jpg11' mode='aspectFill' src='{{item.jpgfilearr[0]}}' data-jpgid="{{item.jpgfilearr[0]}}" data-jpgarr="{{item.jpgfilearr}}" bindtap="seejpg"></image>
+  </view>
+
+
+  <view wx:if="{{item.length>1}}">
+  <view class="form-first-bottom">
+       <view wx:for="{{item.jpgfilearr}}">
+        <view class='jpgarr' >
+          <image class='images-item' src='{{item}}'  mode="aspectFill" 
+           data-jpgid="{{item}}"  bindtap="seejpg">
+          </image>
+        </view>
+      </view>
+    </view>
+  </view>
+  
+
+
+  <view class="liebiao">
+    
+ <view class="biaoqian" bindtap="huati" data-topic="{{item.subject}}">
+    <image class="huatiimg" src="{{item.huatiicon}}"></image>
+    <text class="biaoqiantext">{{item.subject}}</text>  
+  </view>
+
+    <van-icon class="comment" name="chat-o"  size="20" color="#9d9d9d" bindtap="comment"  data-id="{{item._id}}" />
+    <van-icon class="more" bindtap="showPopupbottom" data-data="{{item}}"   size="20" name="ellipsis" />
+  </view>
+  <van-divider />
+  </view>
+  </view>
+  
+<view class="bottomrich">
+
+</view>
+</block>
+
+<block wx:if="{{islogin==''}}">
+  <view class="imgxuanke" >
+<image class="unlogin" src="/img/unlogin.png" mode="widthFix"></image>
+</view>
+<view class="tipslogin" bindtap="login"><text>登录解锁更多功能</text></view>
+</block>
+</van-tab>
+
+
+  </van-tabs>
+</view>
+
+<van-popup show="{{ showbottom }}" custom-style="height: 20%;" position="bottom" bind:close="onClosebottom" round>
+<view class="delete" bindtap="remove" >删除</view>
+<view class="cancel" bindtap="onClosebottom">取消</view>
+</van-popup>

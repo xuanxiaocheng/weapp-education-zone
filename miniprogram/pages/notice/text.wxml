@@ -1,0 +1,24 @@
+
+<view class="top">
+<image class="noticeicon" src="/img/notice.png" mode="widthFix"></image>
+<text style="margin-left:2vw">{{annonuceList.courseName}}</text>
+
+</view>
+<view class="text">
+<rich-text nodes="{{annonuceList.content}}"></rich-text>
+</view>
+<view class="bottom"> 
+  
+  <wxs module="m1">
+      var getfirstimg = function(str0) {
+          var ss = str0.substring(0,str0.length-5)
+          return ss;
+      }
+      module.exports.getfirstimg = getfirstimg;
+    </wxs>
+
+<view>{{m1.getfirstimg(annonuceList.gmtCreate)}}</view>
+</view>
+
+
+

@@ -1,0 +1,94 @@
+<!--pages/my/my.wxml-->
+<block wx:if="{{loginid=='student'}}">
+<view wx:if="{{userInfo==''}}">
+<navigator open-type="navigate" url="/pages/login/login" hover-class="none">
+<view style="position：relative; display: flex;align-items: center; ">
+  <image style="width:15%;position:relative;left:3vw;height:auto" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E6%9C%AA%E7%99%BB%E5%BD%95.png?sign=519e181d653a3c4f1de2a229dc5ad938&t=1611480623" mode="widthFix"></image>
+  <text style="width:15%;position:relative;left:6vw;font-weight: 550;">未登录</text>
+  <van-icon style="width:15%;position:relative;left:55vw;" color="#acacac" name="arrow" />
+</view>
+</navigator>
+</view>
+
+<view wx:if="{{userInfo!=''}}">
+  <view style="position：relative; display: flex;align-items: center;padding-top:2vw" bindtap="showPopupbottom">
+  <image style="width:15vw;position:relative;border-radius:999vw;left:3vw;height:15vw" src="{{userInfo.avatarUrl}}" mode="widthFix"></image>
+  <text style="width:15%;position:absolute;left:25vw;font-weight: 550;top:2vw">{{mz}}</text>
+  <text style="width:15%;position:absolute;color:#acacac;left:25vw;top:10vw">{{uid}}</text>
+  <van-icon style="width:15%;position:relative;left:70vw;" color="#acacac" name="arrow" />
+</view>
+</view>
+
+<!--
+  <view class="bannercontainer">
+<image class="banner" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E4%B8%AA%E4%BA%BA/%E7%BB%BF%E8%89%B2%E6%B8%90%E5%8F%98%E6%89%81%E5%B9%B3%E6%95%99%E8%82%B2banner.png?sign=0b33b77641551d5ecbcde544f4b1062e&t=1611488691" mode="widthFix"></image>
+</view>
+-->
+
+
+
+
+
+<view style="position:relative;margin-top:2vw">
+  <van-cell-group border="{{false}}">
+<van-cell title="我的笔记" bindtap="note" icon-size="32px" icon="records" is-link  border="{{ false }}" size="large"/>
+<van-cell title="我的收藏" bindtap="collect" icon-size="32px" icon="star-o" is-link border="{{ false }}" size="large" />
+</van-cell-group>
+</view>
+
+<view style="position:relative">
+<van-cell title="最近在学" icon-size="32px" icon="underway-o"   border="{{ false }}" size="large"/>
+</view>
+<block wx:if="{{latelycourse==1}}">
+<view class="nullcontainer">
+  <image class="null" src="/img/null.png" mode="widthFix"></image>
+</view>
+</block>   
+<block wx:else>
+<swiper  style="height: 45vw;width:97%;left:10px;position:relative" next-margin="450rpx" snap-to-edge="true" easing-function="linear" duration="200" >
+<view wx:for="{{latelycourse}}">
+  <swiper-item class="singleimg" bindtap="subject" data-id="{{item.courseId}}">
+<image class="swiperimg"  src="{{item.coverUrl}}" mode="aspectFill"></image>
+<view style="position:relative;display: flex; justify-content: center;width:90%">
+<text style="font-size:small;color:#acacac" >{{item.courseName}}</text>
+</view>
+</swiper-item>
+</view>
+</swiper></block>  
+
+<van-popup show="{{ showbottom }}" custom-style="height: 20%;" position="bottom" bind:close="onClosebottom" round>
+<view class="delete" bindtap="loginout" >注销</view>
+<view class="cancel" bindtap="onClosebottom">取消</view>
+</van-popup>
+</block>
+
+<block wx:if="{{loginid=='teacher'}}">
+  <view wx:if="{{userInfo==''}}">
+<navigator open-type="navigate" url="/pages/login/login" hover-class="none">
+<view style="position：relative; display: flex;align-items: center; ">
+  <image style="width:15%;position:relative;left:3vw;height:auto" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E6%9C%AA%E7%99%BB%E5%BD%95.png?sign=519e181d653a3c4f1de2a229dc5ad938&t=1611480623" mode="widthFix"></image>
+  <text style="width:15%;position:relative;left:6vw;font-weight: 550;">未登录</text>
+  <van-icon style="width:15%;position:relative;left:55vw;" color="#acacac" name="arrow" />
+</view>
+</navigator>
+</view>
+
+<view wx:if="{{userInfo!=''}}">
+  <view style="position：relative; display: flex;align-items: center;padding-top:2vw" bindtap="showPopupbottom">
+  <image style="width:15vw;position:relative;border-radius:999vw;left:3vw;height:15vw" src="{{teacher.avatar}}" mode="aspectFill"></image>
+  <text style="width:15%;position:absolute;left:25vw;font-weight: 550;top:2vw">{{teacher.name}}</text>
+  <text style="width:15%;position:absolute;color:#acacac;left:25vw;top:10vw">{{teacher.teacherId}}</text>
+  <van-icon style="width:15%;position:relative;left:70vw;" color="#acacac" name="arrow" />
+</view>
+<van-cell title="账号身份" value="{{teacher.roles}}" size="large" />
+<van-cell title="学院" value="{{teacher.academy}}" size="large" />
+</view>
+
+<van-popup show="{{ showbottom }}" custom-style="height: 20%;" position="bottom" bind:close="onClosebottom" round>
+<view class="delete" bindtap="loginout" >注销</view>
+<view class="cancel" bindtap="onClosebottom">取消</view>
+</van-popup>
+
+</block>
+
+

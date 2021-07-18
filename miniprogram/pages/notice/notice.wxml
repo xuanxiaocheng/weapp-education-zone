@@ -1,0 +1,34 @@
+<block wx:if="{{annonuceList.length!=0}}">
+<view wx:for="{{annonuceList}}" bindtap="text" data-content="{{item}}" data-id="{{item.id}}" hover-class="item-hover" class="notice">
+<view class="top">
+<image class="noticeicon" src="/img/notice.png" mode="widthFix"></image>
+<text style="margin-left:2vw">{{item.courseName}}</text>
+<view class="isRead" wx:if="{{item.isRead==0}}">
+<van-tag type="warning">未读</van-tag>
+</view>
+</view>
+<view class="text">
+<rich-text nodes="{{item.content}}"></rich-text>
+</view>
+<view class="bottom"> 
+
+  <wxs module="m1">
+      var getfirstimg = function(str0) {
+          var ss = str0.substring(0,str0.length-5)
+          return ss;
+      }
+      module.exports.getfirstimg = getfirstimg;
+    </wxs>
+
+<view>{{m1.getfirstimg(item.gmtCreate)}}</view>
+</view>
+<van-divider />
+</view>
+</block>
+
+
+<block  wx:if="{{annonuceList.length==0}}">
+  <view class="nullcontainer">
+  <image class="null" src="/img/noquestion.png" mode="widthFix"></image>
+</view>
+</block>

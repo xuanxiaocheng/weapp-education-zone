@@ -1,0 +1,146 @@
+
+<block wx:if="{{loginid=='student'||loginid==''}}">
+<view class="hicontainer">
+<text class="hi">你好,同学</text>
+</view>
+<view class="juzicontainer">
+<text class="juzi">欢迎来到在线课堂微学习空间！</text>
+</view>
+
+
+
+
+<view class="bottoncontainer">
+<view wx:for="{{botton}}" class="iconcontainer" bindtap="{{item.bindtap}}">
+<image class="bottonicon" src="{{item.icon}}" mode="widthFix"></image>
+<view class="name">
+<text >{{item.name}}</text>
+</view>
+<block wx:if="{{index==3}}">
+  <block wx:if="{{unread!=0}}">
+<view class="unread">{{unread}}</view>
+</block>
+</block>
+</view>
+</view>
+
+
+<view class="news">
+<image class="newsicon" src="/img/notice.png" mode="widthFix"></image>
+<image class="newsshuiyin" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E9%80%9A%E5%91%8A%E6%B0%B4%E5%8D%B0.png?sign=748a11c5df488991d036d00be91719ee&t=1606992012" mode="widthFix"></image>
+<swiper style="height:20vw;width:75%" class="swiper_container" vertical="true" autoplay="true" circular="true" interval="5000">
+<block wx:for="{{annonuceList}}">
+<swiper-item style="position:relative;display:flex;align-items:center"  bindtap="text" data-content="{{item}}" data-id="{{item.id}}">
+<view class="notice">
+<block wx:if="{{item.courseName=='暂无通知公告'}}">
+  <text style="color:#406ac7">【{{item.courseName}}】</text>
+</block>
+<block wx:if="{{item.courseName!='暂无通知公告'}}">
+<view class="noticetitle">
+<text style="color:#406ac7">【{{item.courseName}}】</text>
+</view>
+<text style="margin-left:2vw">{{m1.getfirstimg(item.content)}}</text>
+</block>
+</view>
+</swiper-item>
+</block>
+</swiper>
+</view>
+
+<wxs module="m1">
+      var getfirstimg = function(str0) {
+          ss=str0.substring(3);
+          ss1=ss.substring(0,ss.length-4);
+          return ss1;
+      }
+      module.exports.getfirstimg = getfirstimg;
+    </wxs>  
+
+
+<block wx:if="{{userInfo==''}}" >
+<view class="imgxuanke" bindtap="login">
+<image class="unlogin" src="/img/unlogin.png" mode="widthFix"></image>
+</view>
+<view class="tipslogin" bindtap="login"><text>登录解锁更多功能</text></view>
+</block>
+
+<block wx:if="{{userInfo!=''}}">
+<view class="myclassnew">
+<image class="xuankeicon" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%AF%BE%E7%A8%8B.png?sign=c4a5440191cedf65372cec49d774a8c9&t=1611370858" mode="widthFix"></image>
+<text class="xuanke" >我的选课</text>
+</view>
+
+<block wx:if="{{courseInfo.length!=0}}">
+<view wx:for="{{courseInfo}}" wx:key="id" >
+<view class="classcontainer" bindtap="subject" data-temcourseid="{{item.courseId}}">
+<image class="classicon" src="{{item.coverUrl}}" mode="aspectFill"  ></image>
+<text class="titlemyclass">{{item.courseName}}</text>
+<text class="teacher">{{item.teacherName}}</text>
+</view>
+</view>
+</block>
+
+<block wx:if="{{courseInfo.length==0}}">
+<view class="nullcontainer">
+  <image class="null" src="/img/noquestion.png" mode="widthFix"></image>
+</view>
+</block>
+</block>
+
+
+<van-overlay show="{{ show }}"  >
+  <view class="wrapper">
+    <view class="block" catch:tap="noop"  >
+      <van-icon custom-class="close" bindtap="onClickHide" size="24px" name="close" />
+
+      <text style=" position: relative; " class="titlemid">加入课群</text>
+    
+      <input style=" position: relative;margin-top:8vw; text-align: center;" placeholder-class="inputword"  class="weui-input" value="{{temcourseid}}" auto-focus bindinput="joinnum" placeholder="请输入课群码"/>
+      <button style="position:relative;margin-top:5vw;background-color:#406ac7;color:#fff" bindtap="join" >确认</button>
+
+  </view>
+</view>
+</van-overlay>
+</block>
+
+<block wx:if="{{loginid=='teacher'}}">
+
+  <view class="hicontainer">
+<text class="hi">你好,老师</text>
+</view>
+<view class="juzicontainer">
+<text class="juzi">欢迎来到在线课堂微学习空间！</text>
+</view>
+
+
+<view class="bottoncontainer">
+<view wx:for="{{bottonteacher}}" class="iconcontainer" bindtap="{{item.bindtap}}">
+<image class="bottonicon" src="{{item.icon}}" mode="widthFix"></image>
+<view class="name">
+<text >{{item.name}}</text>
+</view>
+</view>
+</view>
+
+<view class="myclassnew">
+<image class="xuankeicon" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%AF%BE%E7%A8%8B.png?sign=c4a5440191cedf65372cec49d774a8c9&t=1611370858" mode="widthFix"></image>
+<text class="xuanke" >我的课群</text>
+</view>
+
+<block wx:if="{{teachercourse.length!=0}}">
+<view wx:for="{{teachercourse}}" wx:key="id" >
+<view class="classcontainer" bindtap="subjectteacher" data-temcourseid="{{item.courseId}}">
+<image class="classicon" src="{{item.coverUrl}}" mode="aspectFill"  ></image>
+<text class="titlemyclass">{{item.courseName}}</text>
+<text class="teacher">{{item.stuNum}}人加入</text>
+</view>
+</view>
+</block>
+
+<block wx:if="{{teachercourse.length==0}}">
+  <view class="nullcontainer">
+  <image class="null" src="/img/null.png" mode="widthFix"></image>
+</view>
+</block>
+</block>
+

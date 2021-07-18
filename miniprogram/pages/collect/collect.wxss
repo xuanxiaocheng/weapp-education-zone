@@ -1,0 +1,71 @@
+
+
+  .classcontainer{
+    padding-top: 2vw;
+    position: relative;
+    display: flex;
+    align-content: center;
+    height: 30vw;
+  }
+  
+  
+.img{
+  position: relative;
+  width:300rpx;
+  height: 200rpx;
+  border-radius: 1vw;
+  left: 5vw;
+}
+
+.title{
+  position: absolute;
+  top: 3vw;
+  left: 50vw;
+  font-weight: 500;
+  font-size-adjust: inherit;
+}
+
+.teacher{
+  position: absolute;
+  top: 12vw;
+  left: 50vw;
+  font-weight: 500;
+  font-size-adjust: inherit;
+  font-size: small;
+  color: darkgray;
+}
+
+
+.stunum{
+  position: absolute;
+  top: 19vw;
+  left: 50vw;
+  font-weight: 500;
+  font-size-adjust: inherit;
+  font-size: small;
+  color: darkgray;
+}
+
+
+
+.fengge{
+  height: 0.2vw;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.right{
+  background-color: #ee0a24;
+  width: 65px;
+  height: 32.2vw;
+  font-size: small;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-hover {
+  background: rgb(230, 230, 230);
+}
+

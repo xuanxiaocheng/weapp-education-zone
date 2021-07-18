@@ -1,0 +1,60 @@
+/* miniprogram/pages/notice/notice.wxss */
+.bottom{
+  display: flex;
+  align-items: center;
+  color: #acacac;
+  margin-left: 15vw;
+  margin-top: 2vw;
+  font-size:small
+}
+
+.noticeicon{
+  width: 10%;
+  height: auto;
+}
+
+.top{
+  display: flex;
+  align-items: center;
+  margin-left: 3vw;
+  font-weight: 550;
+  position: relative;
+  padding-top: 1vw;
+}
+
+.text{
+  margin-left: 15vw;
+  margin-top: 2vw;
+  font-size: smaller;
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.isRead{
+  position: absolute;
+  right: 5vw;
+}
+
+
+.item-hover {
+  background: rgb(230, 230, 230);
+}
+
+
+.nullcontainer{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 65vw;
+
+}
+
+
+
+.null{
+  width: 50%;
+  height: auto;
+}

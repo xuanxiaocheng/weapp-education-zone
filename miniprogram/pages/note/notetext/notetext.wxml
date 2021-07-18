@@ -1,0 +1,22 @@
+
+
+
+<editor bindinput="ischangetitle" style="height:auto; min-height:1px; position:reletive ; left:4vw ; width:93%"
+id="editor" placeholder="标题"></editor>
+
+<van-divider dashed  />
+
+<editor bindinput="ischangetext" style="height:auto; min-height:1px; position:reletive ; left:4vw ; width:93%"
+id="editor2" placeholder="笔记内容..."></editor>
+
+
+<view class="disend">
+<view wx:if="{{ischange=='0'}}">
+<text style="color: #b3b1b1;" class="sendtext">保存</text>
+</view>
+
+<view wx:if="{{ischange=='1'}}">
+<text style="color:#3f6ff9"  bindtap="notecloudchange" class="sendtext">保存</text>
+</view>
+
+</view>

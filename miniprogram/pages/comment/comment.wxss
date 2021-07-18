@@ -1,0 +1,544 @@
+/* pages/school/school.wxss */
+.calender{
+  width: 100%
+}
+
+page{
+  background-color: #fff
+}
+
+
+  
+.add{
+  position: relative;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  right: 0;
+  left: 0;
+  margin: auto;
+}
+
+
+.hengxiang0{
+  height: 0.1vw;
+  width: 100%;
+  background: #f7f7f7;
+
+  }
+
+
+
+.hengxiang{
+  height: 2vw;
+  width: 100%;
+  background: #f7f7f7;
+
+  }
+
+  .fengxiang{
+    height: 0.2vw;
+    width: 95%;
+    background: #f7f7f7;
+    position: relative;
+    display: flex;
+    align-items: center;
+    vertical-align: center;
+    right: 0;
+    left: 0;
+    margin: auto;
+    margin: 15rpx 0rpx 15rpx 0rpx
+     }
+
+     .delete1{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 5vw;
+      padding-bottom: 5vw;
+      color: crimson;
+    }
+
+    .deletehover{
+      background-color: #fff
+    }
+    
+    .cancel{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+.id{
+  position: relative;
+  height: 8vw;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+  
+}
+
+.id1{
+  position: relative;
+  height: 12vw;
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  vertical-align: center;
+}
+
+
+
+
+.title{
+position: relative;
+ font-weight: 600;
+ margin-left: 8vw;
+ font-size:28rpx;
+  
+}
+
+.title1{
+  position: relative;
+   font-size: 12px;
+   font-weight: 600;
+   margin-left: 8vw;
+  margin-top: 10vw;
+  color: #b3b1b1;
+  }
+
+  .title1top{
+    position: relative;
+    top: -5vw; 
+    font-size: 12px;
+     font-weight: 600;
+     margin-left: 8vw;
+    margin-top: 10vw;
+    color: #b3b1b1;
+    }
+
+  .titletime{
+    position: relative;
+     font-size: 11px;
+     font-weight: 600;
+     left: 21vw;
+  
+    color: #b3b1b1;
+    }
+
+.morechoose{
+  position: relative;
+display: flex;
+align-items: center;
+vertical-align: center;
+
+}
+
+    .more{
+      position: relative;
+       font-size: 11px;
+       font-weight: 600;
+       left: 60vw;
+  
+      color: #b3b1b1;
+      }
+
+.comment{
+  position: relative;
+       font-size: 11px;
+       font-weight: 600;
+       left: 57vw;
+     
+  
+}
+
+
+  .keep{
+    position:absolute;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 70vw;
+   margin-top: 4vw
+  }
+
+
+.touxiang{  
+  height: auto;
+  width: 10%;
+  margin-left: 3vw;
+  border-radius: 100rpx}
+
+
+
+.wenzi{
+  position: relative;
+  font-size: 14px;
+  left: 5vw;
+  letter-spacing:3rpx;
+
+}
+
+.wenzik{
+width: 94%;
+
+
+}
+
+.swiper image {
+  width: 100%;
+  height: auto;
+}
+
+
+.addtu{
+  width: 8%;
+}
+
+
+.tabbar{
+  height: 20vw;
+  background-color: #f7f7f7;
+}
+
+
+.shouchang{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+  padding: 2vw;
+}
+
+
+
+.hd{
+  padding: 15rpx 0rpx 15rpx 0rpx;
+  font-size: small;
+}
+
+.juxing{
+  display: flex;
+  width: 100%;
+  height: 25vw;
+  background: rgba(250,250,250,0.6);
+	backdrop-filter: blur(15px);
+  position: fixed;
+  bottom:0;
+  border-color: #f6f6f6;
+  border-style: solid;
+  border-width: 1rpx 0rpx 0rpx 0rpx;
+  
+}
+
+.juxingbuchong{
+  display: flex;
+  width: 90%;
+  height: 20vw;
+
+}
+
+.answer3{
+  position: relative;
+     font-size: 11px;
+     font-weight: 600;
+     left: 5vw;
+     top: -10vw;
+    color: #b3b1b1;
+}
+
+.juxinghui{
+  position: relative;
+  width: 70%;
+  height: auto;
+  top: 3vw;
+  background: #f1f1f1;
+  border-radius: 3vw;
+  left: 20vw;
+  padding: 20rpx 0 20rpx 0;
+}
+
+.fengge{
+  position: relative;
+
+}
+
+.top{
+width: 100%;
+ z-index: 1;
+  position: fixed;
+  top:0;
+  height: 30.3vw;
+}
+
+.topwhite{
+  z-index: 2;
+  height: 30.3vw; background-color: #f7f7f7;
+}
+
+
+.juxing{
+  display: flex;
+  width: 100%;
+  height: 20vw;
+  background:#fff;
+  position: fixed;
+  bottom:0;
+  
+ 
+}
+
+
+.write{
+  position: relative;
+  left: 2vw;
+}
+
+.writetext{
+  position: relative;
+  left: 3vw;
+  color: #7b7b7b;
+  font-size: small
+}
+
+.answer{
+  position: relative;
+  width: 100%;
+
+
+}
+
+
+/*使屏幕变暗  */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+/*对话框 */
+.commodity_attr_box {
+  height: 900rpx;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+  border-top-left-radius: 4vw;
+  border-top-right-radius: 4vw;
+}
+
+.commodity_attr_box1 {
+  height: 400rpx;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 20rpx;
+  border-top-left-radius: 4vw;
+  border-top-right-radius: 4vw;
+}
+
+
+.answerphoto{
+  position: fixed;
+  bottom: 5vw;
+  left: 3vw;
+}
+
+.send{
+  position: fixed;
+  bottom: 5vw;
+  left: 85vw;
+}
+
+.answerwrite{
+  padding: 5vw 0 5vw 0;
+}
+
+.wenzianswer{
+  position: relative;
+  font-size: 14px;
+  left: 21vw;
+  word-break: break-all;
+}
+
+.answercontainertop{
+  display: flex;
+  justify-content: center;
+}
+
+.wenzianswercontainer{
+  position: relative;
+  width: 70%;
+  display: flex;
+  align-items: center;
+}
+
+
+.jpgarr1{
+  position: relative;
+  width: 209rpx;
+  height: 209rpx;
+  padding:15rpx 0 15rpx 15rpx;
+ 
+}
+
+
+.images-item1{
+  
+  width: 209rpx;
+  height: 209rpx;
+  border-radius: 2vw;
+  border-color: #f1f1f1;
+  border-width: 0.1rpx;
+  border-style: solid;
+}
+
+
+.form-first-bottom1{
+position: relative;
+display: flex;
+align-items: center;
+vertical-align: center;
+padding-bottom:20rpx;
+width:100%;
+left: 5vw;
+margin: auto;
+flex-wrap:wrap;
+
+}
+
+.imagecontainer{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  vertical-align: center;
+}
+
+.swiper-view{
+  position: relative;
+  top: 5vw;
+ 
+}
+
+.lbt{
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+.anwsergroug{
+  position: relative;
+  height: 6vw;
+  width: 40%;
+  left: 5vw;
+  border-radius: 5vw;
+  background: #f6f6f6;
+  display: flex;
+  padding:1vw;
+  align-items: center;
+ 
+}
+
+.answer{
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.huifu{
+  font-weight: 400;
+  letter-spacing:3rpx;
+}
+
+
+/*九宫格*/
+
+.jpgarr{
+  position: relative;
+  width: 170rpx;
+  height: 170rpx;
+  padding:15rpx 0 15rpx 15rpx;
+  border-radius: 2vw;
+ 
+}
+
+
+.images-item{
+  border-radius: 2vw;
+  border-color: #f1f1f1;
+  border-width: 0.1rpx;
+  border-style: solid;
+  width: 170rpx;
+  height: 170rpx;
+  
+}
+
+
+.form-first-bottom{
+position: relative;
+display: flex;
+align-items: center;
+vertical-align: center;
+padding-bottom:20rpx;
+width:75%;
+left: 7vw;
+margin: auto;
+flex-wrap:wrap;
+
+
+}
+
+
+.answer2name{
+  color: #6ac3ef;
+  font-size: small;
+  position: relative;
+  left: 3vw;
+  font-weight: 500;
+}
+
+
+.answertext{
+  color: #000;
+  word-break: break-all;
+  
+}
+
+.answercontainer{
+  position: relative;
+  width: 95%;
+
+}
+
+
+.wenzicontainer{
+  position: relative;
+  width: 90%;
+
+}
+
+
+.delete{
+  position: relative;
+  top: -28vw;
+  left: 22vw;
+}

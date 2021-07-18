@@ -1,0 +1,54 @@
+<block wx:if="{{loginid=='student'}}">
+<block wx:if="{{myQuestions.length!=0}}">
+<view wx:for="{{myQuestions}}">
+<view bindtap="question" class="single" data-temquestionid="{{item.question.id}}">
+  <block wx:if="{{item.question.unReadCount!='0'}}">
+  <view class="unread">{{item.question.unReadCount}}</view>
+</block>
+<image style="width:13vw;height:13vw;position:relative;left:3vw;border-radius:2vw;" src="{{item.question.photoUrl}}" mode="aspectFill"></image>
+<text class="name">{{item.question.title}}</text>
+<view  wx:if="{{item.latestComment!=null}}">
+<text class="answer">{{item.latestComment.commentUserName}}：{{item.latestComment.content}}</text>
+</view>
+</view>
+</view>
+</block>
+
+<block wx:if="{{myQuestions.length==0}}">
+  <view class="imgxuanke" bindtap="login">
+<image class="unlogin" src="/img/nonew.png" mode="widthFix"></image>
+</view>
+</block>
+</block>
+
+<block wx:if="{{loginid=='teacher'}}">
+<block wx:if="{{isloading}}">
+  <view class="loadingcontainer"> 
+  <image class="loading" src="/img/loading.gif" mode="widthFix"></image>
+加载中...
+</view>
+</block>
+
+<block wx:if="{{teachercourse2.length!=0}}">
+  <view wx:for="{{teachercourse2}}" wx:key="id" hover-class="item-hover" bindtap="subjectteacher" data-temcourseid="{{item.courseId}}" >
+<view class="classcontainer" bindtap="subject" data-temcourseid="{{item.courseId}}">
+<image class="classicon" src="{{item.coverUrl}}" mode="aspectFill"  ></image>
+<text class="titlemyclass">{{item.courseName}}</text>
+<block wx:if="{{item.data!=0}}">
+  <view class="unread">{{item.data}}</view>
+<text style="color:#f95050" class="teacher">您有{{item.data}}条新的答疑</text>
+</block>
+<block wx:if="{{item.data==0}}">
+<text class="teacher">暂无新的答疑</text>
+</block>
+</view>
+</view>
+</block>
+
+<block wx:if="{{teachercourse2.length==0}}">
+  <view class="nullcontainer">
+  <image class="null" src="/img/null.png" mode="widthFix"></image>
+</view>
+</block>
+</block>
+

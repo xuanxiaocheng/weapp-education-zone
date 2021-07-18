@@ -1,0 +1,17 @@
+<view  wx:for="{{collection}}">
+
+  <van-swipe-cell right-width="{{ 65 }}"  >
+
+  <view class="classcontainer" data-id="{{item.courseId}}" bindtap="subject">
+<image class="img" src="{{item.coverUrl}}" mode="aspectFill"></image>
+<text class="title">{{item.courseName}}</text>
+<text class="teacher">{{item.teacherName}}</text>
+<text class="stunum">{{item.stuNum}}人已学</text>
+</view>
+<view class="fengge"></view>
+<view  slot="right">
+  <view class="right" data-id="{{item.courseId}}" bindtap="keepdelete" >取消收藏</view>
+  </view>
+  </van-swipe-cell>
+
+</view>

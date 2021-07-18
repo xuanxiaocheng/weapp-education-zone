@@ -1,0 +1,75 @@
+<navigator  open-type="navigateBack" hover-class="none">
+<view class="back" style="background:#ffffff; opacity:0.6;"   >
+  <van-icon class="backicon" size="23px" name="arrow-left" />
+</view>
+</navigator>
+
+<swiper style="height: 35vh;width:100%">
+<swiper-item style="height: 35vh;width:100%">
+  <view>
+<image style="height: 35vh;width:100%" class="img" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%BD%AE%E6%92%AD%E5%9B%BE/%E8%BD%AE%E6%92%ADmysql.png?sign=2d675eda2617257144579785aeada891&t=1611986828" mode="aspectFill"></image>
+</view>
+</swiper-item>
+</swiper>
+
+
+<view class="search">
+  <image class="searchimg" src="/img/search0.png" mode="widthFix"></image>
+  <block wx:if="{{searching}}">
+    <image class="clear" src="/img/false.png"  bindtap="inputing2" mode="widthFix"></image>
+  </block>
+<input class="input" value="{{searchinput}}" confirm-type="search" bindconfirm="inputing" placeholder="请输入课程关键词"></input>
+</view>
+
+<block wx:if="{{!searching}}">
+<van-grid border="{{false}}" icon-size="36px">
+  <van-grid-item icon="/img/computer.png" text="计算机" bindtap="classtype" data-id="0" />
+  <van-grid-item icon="/img/article.png" text="人文"  bindtap="classtype" data-id="1" />
+  <van-grid-item icon="/img/law.png" text="法学"  bindtap="classtype" data-id="2"/>
+  <van-grid-item icon="/img/art.png" text="艺术"  bindtap="classtype" data-id="3"/>
+  <van-grid-item icon="/img/project.png" text="理工"  bindtap="classtype" data-id="4"/>
+  <van-grid-item icon="/img/forest.png" text="农林" bindtap="classtype" data-id="5"/>
+  <van-grid-item icon="/img/money.png" text="管理" bindtap="classtype" data-id="6"/>
+  <van-grid-item icon="/img/animal.png" text="动物科学" bindtap="classtype" data-id="7"/>
+</van-grid>
+
+<view class="recontainer">
+<image class="hot" src="/img/hot.png" mode="widthFix"></image>
+<text class="recommend">最新推荐</text>
+</view>
+<view class="context2" wx:for="{{recommendlist}}">
+<view class="classcontainer" bindtap="subject" data-id="{{item.courseId}}">
+<image class="imgfengmian" src="{{item.coverUrl}}" mode="aspectFill"></image>
+<text class="titlecourse">{{item.courseName}}</text>
+<text class="teacher">{{item.teacherName}}</text>
+<text class="stunum">{{item.stuNum}}人已学</text>
+</view>
+</view>
+
+
+</block>
+
+
+
+<block wx:if="{{searching}}">
+<block wx:if="{{searchtext.length>0}}">
+<view class="context" wx:for="{{searchtext}}">
+<view class="classcontainer" bindtap="subject" data-id="{{item.courseId}}">
+<image class="imgfengmian" src="{{item.coverUrl}}" mode="aspectFill"></image>
+<text class="titlecourse">{{item.courseName}}</text>
+<text class="teacher">{{item.teacherId}}·计算机学院</text>
+<text class="stunum">{{item.stuNum}}人已学</text>
+</view>
+</view>
+</block>
+
+<block wx:if="{{searchtext.length==0}}">
+<view  class="searchnull">
+<image style="width:50%" src="/img/searchnull.png" mode="widthFix"></image>
+</view>
+<view class="null">无结果</view>
+</block>
+
+
+
+</block>

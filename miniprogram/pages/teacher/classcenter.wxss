@@ -1,0 +1,273 @@
+
+.tuijian{
+  width: 95%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  border-radius: 2vw;
+  padding-bottom: 20rpx;
+}
+
+.subject{
+  position: relative;
+  top: 2vw;
+  left: 4vw;
+  font-weight: 600;
+}
+
+.index{
+  position: relative;
+  left: 60vw;
+  top: 2vw;
+  font-size: small;
+  color: #acacac;
+}
+
+.retextcontaine{
+  margin-bottom:30rpx;
+}
+
+.more{
+  position: relative;
+  font-size: small;
+  color: #acacac;
+  left: 40vw;
+  top: 3vw;
+  margin-bottom: 30rpx;
+  
+}
+
+.fuhao{
+  position: relative;
+  left: 40vw;
+  top: 4vw;
+}
+
+.lunbotucontainer{
+  position: relative;
+  width: 95%;
+  height: 30vh;
+  right: 0;
+  left: 0;
+  margin: auto;
+  border-radius: 3vw;
+  overflow: hidden;
+}
+
+.reimg{
+  position: relative;
+  width: 200rpx;
+  top: 5vw;
+  left: 4vw;
+  height: 150rpx;
+  border-radius: 1vw;
+}
+
+.recommend{
+  position: relative;
+  font-size: medium;
+  margin-left: 2vw;
+  font-weight: 550;
+  font-size: small;
+}
+
+.title{
+  position: relative;
+  top: -9vw;
+  font-weight: 500;
+  left: 8vw;
+  font-size: 3.8vw;
+}
+
+.title2{
+  position: relative;
+  color: #acacac;
+  top:  -2vw;
+  left: -18.5vw;
+  font-size: small;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
+
+
+.recontainer{
+  height: 5vw;
+  position: relative;
+  align-items: center;
+  align-content: center;
+  margin: 10rpx 0 0 0;
+}
+
+.back{
+  width: 10vw;
+  height: 10vw;
+  position: fixed;
+  background-color: white;
+  top: 5vh;
+  left: 3vw;
+  z-index: 999;
+  border-radius: 99vw;
+  border: solid 0.1px; 
+  border-color:#acacac;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.container{
+  top: -5vw;
+  position: relative;
+  border-top-right-radius: 5vw;
+  border-top-left-radius: 5vw;
+  background-color: white;
+  height: auto;
+}
+
+.search{
+  position: relative;
+  border-radius: 2vw;
+  top: -6vw;
+  height: 15vw;
+  width: 100%;
+  margin: auto;
+  left: 0;
+  right: 0;
+  background-color: white;
+  box-shadow: 0px 4px 16px 0px rgba(0,0,0,0.06); 
+  display: flex;
+  align-items: center;
+}
+
+.searchcontainer{
+ background-color: white;
+
+}
+
+
+.input{
+  position: relative;
+  width: 55%;
+  left: 10vw;
+  font-size: small;
+}
+
+.searchimg{
+  position: relative;
+  width: 10%;
+  left: 5vw;
+  height: auto;
+}
+
+.imgfengmian{
+  position: relative;
+  width:35vw;
+  height: 20vw;
+  border-radius: 2vw;
+  left: 5vw;
+  border-width: 0.3vw;
+  border-style: solid;
+  border-color: #f1f1f1;
+}
+
+.titlecourse{
+  position: absolute;
+  top: 1vw;
+  left: 45vw;
+  font-weight: 500;
+  font-size-adjust: inherit;
+  font-size: small;
+   overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.teacher{
+  position: absolute;
+  top: 8vw;
+  left: 45vw;
+  font-weight: 500;
+  font-size-adjust: inherit;
+  font-size: small;
+  color: darkgray;
+}
+
+.stunum{
+  position: absolute;
+  top: 15vw;
+  left: 45vw;
+  font-weight: 500;
+  font-size-adjust: inherit;
+  font-size: small;
+  color: darkgray;
+}
+
+
+.context{
+  min-height: 10vw;
+  background-color: white;
+  position: relative;
+  border-top-right-radius: 6vw;
+  border-top-left-radius: 6vw;
+  }
+
+  
+.context2{
+  margin-top: 5vw;
+  min-height: 10vw;
+  background-color: white;
+  position: relative;
+  border-top-right-radius: 6vw;
+  border-top-left-radius: 6vw;
+  }
+
+.searchimg2{
+  width: 12%;
+  position: relative;
+  left: 20vw;
+  height: auto;
+  
+}
+
+
+.searchnull{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.null{
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: -10vw;
+  color: #acacac;
+}
+
+.hot{
+  width: 5%;
+  margin-left: 5vw;
+}
+
+.clear{
+  position: absolute;
+  right: 5vw;
+  width: 5%;
+}
+
+.classcontainer{
+  position: relative;
+  top: 5vw;
+  padding-bottom: 5vw;
+
+}

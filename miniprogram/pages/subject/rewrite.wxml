@@ -1,0 +1,20 @@
+
+<editor style="height:auto; min-height:1px; position:reletive ; left:4vw ; width:93%"
+ bindinput="title" id="editor" placeholder="标题"></editor>
+
+<van-divider dashed  />
+
+<editor style="height:auto; min-height:1px; position:reletive ; left:4vw ; width:93%"
+ bindinput="text" id="editor2"   placeholder="正文内容..."></editor>
+
+
+
+<view class="disend">
+  <block wx:if="{{text==temtext&&title==temtitle}}">
+<text class="sendtext">保存</text>
+</block>
+<block wx:if="{{text!=temtext||title!=temtitle}}">
+<text style="color:#4972cc" class="sendtext" bindtap="send">保存</text>
+</block>
+<text class="delete" bindtap="delete">删除</text>
+</view>

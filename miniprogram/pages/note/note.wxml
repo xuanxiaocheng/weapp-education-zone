@@ -1,0 +1,27 @@
+
+
+    <block wx:if="{{noteall.length>0}}">
+    <view wx:for="{{noteall}}">
+    <van-swipe-cell right-width="{{ 65 }}" >
+  
+    <view class="notecontainer" hover-class="item-hover"  bindtap="notetext" data-id="{{item._id}}" data-num="{{index}}">
+  <view class="notealltitle" >{{item.notetitle.text}}</view>
+  <view class="notealltext" >{{item.notetext.text}}</view>
+</view>
+  <view class="fengge"></view>
+  <view  slot="right">
+  <view class="right" data-id="{{item._id}}" bindtap="notedelete">删除</view>
+  </view>
+
+</van-swipe-cell>
+    </view></block>
+
+<block wx:if="{{noteall.length==0}}">
+
+<image src="/img/null.png" class="null" mode="widthFix"></image>
+
+
+</block>
+
+
+<image class="fatie" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E7%BC%96%E8%BE%91.png?sign=326fa9138446f16fa17fbfe612e65c88&t=1611659982" mode="widthFix"  bindtap="answer"></image>

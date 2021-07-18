@@ -1,0 +1,76 @@
+
+
+.notetitle{
+  position: relative;
+  font-weight: 550;
+  left: 6vw;
+}
+
+
+
+.notealltitle{
+  position: relative;
+  font-weight: 550;
+  font-size: medium;
+  margin-bottom:1vw ;
+  left: 5vw;
+  width: 90%;
+  color: #000;
+  overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+ 
+}
+
+
+.notealltext{
+  position: relative;
+  font-size: small;
+  left: 5vw;
+  width: 90%;
+  overflow: hidden;
+white-space: nowrap;
+text-overflow: ellipsis;
+}
+.notecontainer{
+  position: relative;
+  height: 13vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+}
+
+
+
+
+.fengge{
+  height: 0.2vw;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.right{
+  background-color: #ee0a24;
+  width: 65px;
+  height: 18vw;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.item-hover {
+  background: rgb(230, 230, 230);
+}
+
+
+.fatie{
+  width: 13%;
+  position: fixed;
+  z-index: 999;
+  top: 85vh;
+  left: 80vw;
+  height: auto;
+}
+
+.null{width: 100%;
+height: auto;}

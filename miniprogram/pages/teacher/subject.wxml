@@ -1,0 +1,249 @@
+<navigator  open-type="navigateBack" hover-class="none">
+<view class="back" style="background:#ffffff; opacity:0.6;"   >
+  <van-icon class="backicon" size="23px" name="arrow-left" />
+</view>
+</navigator>
+
+
+<view wx:if="{{istouch==0}}">
+<image style="height: 30vh;width:100%" class="topfix" src="{{coursemessage.coverUrl}}" mode="aspectFill"></image>
+</view>
+
+<view wx:if="{{istouch==1}}">
+<video class="topfix" bindloadedmetadata="freshover" style="height: 30vh;width:100%" src="{{videoSourceUrl}}"></video>
+</view>
+
+<van-tabs active="{{ active }}" custom-class="tabsall" color="#4972cc" border="{{false}}"  bind:change="onChange1"  swipeable animated>
+  <van-tab  title="课程介绍" style="min-height:60vh;">
+    <scroll-view scroll-y style="height:63vh">
+    <view  class="title">
+<text>{{coursemessage.courseName}}</text>
+</view>
+
+<van-row>
+  <van-col span="12">
+    <view class="teacher">
+<image class="teacherimg" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%80%81%E5%B8%88%20%E7%94%B7.png?sign=64821551d5a4ed027203c876668da4e8&t=1607784932" mode="widthFix"></image>
+  <text class="teachername">{{coursemessage.teacherName}}</text>
+</view>
+</van-col>
+  <van-col span="12">
+    <view class="teacher">
+<image class="teacherimg" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E5%AD%A6%E7%94%9F.png?sign=cd527e64cc218e1ef42b5c31698f427c&t=1612782700" mode="widthFix"></image>
+  <text class="teachername">{{coursemessage.stuNum}}人加入</text>
+</view>
+  </van-col>
+</van-row>
+
+
+<view  class="title2">
+<text>课程简介</text>
+</view>
+
+<view  style="margin:2vw auto;width:95%;right:0;left:0">
+<rich-text space="emsp" style="text-indent:2em;font-size:3.8vw;color:#acacac" nodes="{{coursemessage.courseDescription}}"></rich-text>
+</view>
+  
+  </scroll-view>
+</van-tab>
+
+
+  <van-tab title="课程资源"  border="{{ false }}" style="min-height:60vh;" >
+ 
+
+    <scroll-view scroll-y style="height:63vh">
+    <van-collapse value="{{ activeNames }}"  bind:change="onChange" border="{{ false }}" clickable>
+  <view wx:for="{{course}}">
+  <van-collapse-item title-class="titlemulu" title="{{item.title}}"  name="{{item.index}}" border="{{ false }}"  >
+
+    <view wx:for="{{item.children}}">
+     
+    <van-collapse-item title="{{item.title}}" name="{{item.index}}" border="{{ false }}" >
+
+      <van-cell-group border="{{ false }}">
+        <view wx:for="{{m1.getfirstimg(item.fileOriginalName,item.fileSourceUrl)}}">
+        <view class="single">
+          <van-icon name="orders-o" size="20px" />
+  <van-cell title="{{item[0]}}" clickable border="{{ false }}" 
+   bindtap="downloadFile" data-fileurl="{{item[1]}}" />
+  </view>
+        </view>
+
+        <wxs module="m1">
+      var getfirstimg = function(str0,str1) {
+          var ss = str0.split(",");
+          var aa = str1.split(",");
+          for(var i=0;i<ss.length;i++){
+           ss[i]=[ss[i]].concat(aa[i])
+          }
+       
+          return ss;
+      }
+      module.exports.getfirstimg = getfirstimg;
+    </wxs>  
+
+
+
+<view wx:for="{{m1.getfirstimg(item.videoOriginalName,item.videoSourceId)}}">
+  <view class="single">
+  <van-icon name="video-o" size="20px" custom-class="cell_title{{item[1] == chosenid?'chosen':''}}"/>
+  <van-cell  title="{{item[0]}}" bindtap="playvideo" data-id="{{item[1]}}" 
+  data-fileurl="{{item[1]}}" clickable  border="{{ false }}" 
+  title-class="cell_title{{item[1] == chosenid?'chosen':''}}"/>
+  </view>
+</view>
+      </van-cell-group>
+
+  </van-collapse-item>  
+
+</view>
+  </van-collapse-item>
+</view>
+</van-collapse>
+</scroll-view>
+ </van-tab>
+
+
+  <van-tab title="学习测验" style="min-height:60vh;background-color:#f9f9f9">
+
+    <scroll-view scroll-y="true" style="height:63vh">
+    <view wx:for="{{course}}">
+  <view class="testcontainer" bindtap="test" data-chaperid="{{item.id}}">
+    <image class="testicon" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%80%83%E8%AF%95.png?sign=8f0a68f9f51a9687c27638006f36ec91&t=1611651021" mode="widthFix"></image>
+    <view class="testtitlecontainer">
+  <text class="testtitle">{{item.title}}</text></view>
+  <van-divider />
+  <text class="testtitle2">满分：100</text>
+  <van-icon class="botton"  size="25px" name="edit" />
+</view>
+</view>
+</scroll-view>
+</van-tab>
+
+
+  <van-tab title="在线答疑" style="min-height:60vh;">
+    <scroll-view scroll-y style="height:63vh">
+  <view class="questionall">
+    <block wx:if="{{questionList.length==0}}">
+      <view class="null">
+    <image  src="/img/null.png" mode="widthFix"></image>
+  </view>
+    </block>
+  <block wx:if="{{questionList.length!=0}}">
+  <block wx:for="{{questionList}}">
+    <view class="question" hover-class="item-hover" bindtap="question" data-id="{{item.id}}">
+      <block wx:if="{{item.isRead==0}}">
+    <view class="unread"></view>
+    </block>
+ <!--   <van-tag class="tabs" plain type="primary">未回答</van-tag>-->
+    <image style="width:8%;height:auto" src="/img/wenicon.png" mode="widthFix"></image>
+    <view class="titleque">{{item.title}}</view>
+  </view>
+  <view class="unknownum">{{item.unKnown+1}}人表示不懂</view>
+  <view style="width:90%;margin:auto;left:0;right:0">
+  <van-divider custom-style="margin-top:0vw;margin-bottom:0vw"/></view></block>
+</block>
+</view>
+    </scroll-view>
+  </van-tab>
+
+
+</van-tabs>
+
+
+
+
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" catchtouchmove="ture" wx:if="{{showModalStatus}}"></view>
+  <!--弹出框  -->
+  <view animation="{{animationData}}" catchtouchmove="ture" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+
+  <view wx:if="{{!note}}">
+
+    <view class="notetop">
+  <image class="noteicon" src="cloud://work-uoll7.776f-work-uoll7-1300843182/教务小程序/笔记.png" mode="widthFix"></image>
+    <text class="notetitle">我的笔记</text>
+   <van-icon class="add" name="add-o" size="30px" bindtap="noteadd"/>
+  </view>
+  <view class="fengge"/>
+
+  <scroll-view scroll-y class="scroll">
+    <view wx:for="{{noteall}}">
+    <van-swipe-cell right-width="{{ 65 }}" >
+  
+    <view class="notecontainer" hover-class="item-hover"  bindtap="notesee" data-num="{{index}}" data-id="{{item._id}}">
+  <view class="notealltitle" >{{item.notetitle.text}}</view>
+  <view class="notealltext" >{{item.notetext.text}}</view>
+</view>
+  <view class="fengge"></view>
+  <view  slot="right">
+  <view class="right" data-id="{{item._id}}" bindtap="notedelete">删除</view>
+  </view>
+
+</van-swipe-cell>
+
+</view>
+  
+
+</scroll-view>
+</view>
+
+
+
+<van-transition show="{{ note2 }}" name="fade-right" custom-class="commodity_attr_box">
+
+
+<editor id="editor0" style="height:auto; min-height:1px; position:reletive ; left:4vw ; width:93%"
+ bindinput="interview" placeholder="标题"></editor>
+
+<van-divider dashed  />
+
+<editor id="editor1" style="height:auto; min-height:1px; position:reletive ; left:4vw ; width:93%"
+ bindinput="interview2" placeholder="笔记内容..."></editor>
+
+
+<view class="disend">
+<view wx:if="{{notetitle==''}}">
+<text style="color: #b3b1b1;" class="sendtext">保存</text>
+</view>
+
+<view wx:if="{{notetitle!=''}}">
+<text style="color:#3f6ff9" bindtap="addnotecloud" class="sendtext">保存</text>
+</view>
+
+<image class="backicon2" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%BF%94%E5%9B%9E%20(1).png?sign=7fb40984f82552636d49d9d3ee9d2c3c&t=1612880543" mode="widthFix" bindtap="noteadd2"></image>
+</view>
+
+</van-transition>
+
+<van-transition show="{{ note3 }}" name="fade-right" custom-class="commodity_attr_box">
+
+  <editor bindinput="ischangetitle" style="height:auto; min-height:1px; position:reletive ; left:4vw ; width:93%"
+  id="editor" placeholder="标题"></editor>
+
+<van-divider dashed  />
+
+<editor bindinput="ischangetext" style="height:auto; min-height:1px; position:reletive ; left:4vw ; width:93%"
+id="editor2" placeholder="笔记内容..."></editor>
+
+
+<view class="disend">
+<view wx:if="{{ischange=='0'}}">
+<text style="color: #b3b1b1;" class="sendtext">保存</text>
+</view>
+
+<view wx:if="{{ischange=='1'}}">
+<text style="color:#3f6ff9"  bindtap="notecloudchange" class="sendtext">保存</text>
+</view>
+
+<image class="backicon2" src="https://776f-work-uoll7-1300843182.tcb.qcloud.la/%E6%95%99%E5%8A%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F/%E8%BF%94%E5%9B%9E%20(1).png?sign=7fb40984f82552636d49d9d3ee9d2c3c&t=1612880543" mode="widthFix" bindtap="noteadd2"></image>
+</view>
+</van-transition>
+
+  </view>
+
+  <block wx:if="{{loading}}">
+  <view style="height: 30vh;width:100%" class="topfixloading"  mode="aspectFill">
+<image class="loadingimg" src="/img/loading.gif" mode="widthFix"></image>
+  </view>
+</block>
